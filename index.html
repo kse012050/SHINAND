@@ -12,83 +12,67 @@
     <link rel="stylesheet" href="css/import.css">
     <script>
     $(document).ready(function(){
+        mainImgChange();
+        mainVisionClick();
+        menuClick();
+        scrollEvent();
+
+    });
+
+    function scrollEvent(){
         var indexNum;
         var pos;
         var logoImgSrc = ["img/logo.png","img/logo_white.png"];
         var currentLocation = 0;
         var menuColorboolean = true;
-        $('section').each(function(){
-            $(this).on("mousewheel", function (event) { 
-                var mouseWheel = event.originalEvent.wheelDelta;
-                // console.log($(this).index());
-                // if($('section').is(':animated'))return;
+            $('section').each(function(){
+                $(this).on("mousewheel", function (event) {
 
-                // console.log(mouseWheel);
-                // if(mouseWheel > 0){
-                //     if($(this).prev()[0] != undefined){
-                //         pos = $(this).prev().offset().top;
-                //         indexNum = $(this).prev().index();
-                        
-                //     }
-                // }else{
-                //     if($(this).next()[0] != undefined){
-                //         pos = $(this).next().offset().top;
-                //         indexNum = $(this).next().index();
-                //     }
-                // }
-                // console.log($(this).css("bottom"));
-                // if($(this).css("bottom") != "0px" || $(this).next().css("bottom") != "0"){
-                    if($('section').is(':animated')){
-                        return;
-                    }else{
-                    if(mouseWheel > 0){
-                        $(this).prev().animate({'bottom' : 0+"vh"},300);
-                        // if($(this).css("bottom") == "0px"){
-                        //     $(this).prev().removeClass("test");
-                        // }
-                        if($(this).prev().attr('class') == "aboutArea"){
-                            $("header ul").addClass("active");
+                    mouseWheel = event.originalEvent.wheelDelta;
+                    if($(window).width() > 768){
+                        if($('section').is(':animated')){
+                            return;
                         }else{
-                            $("header ul").removeClass("active");
-                            $("header ul li").removeClass("active");
-                            $("header ul li:nth-of-type(1)").addClass("active");
-                            $("header h1").removeClass("logoBlack");
-                            $("header div span").removeClass("menuBottonBlack");
-                        }
-                    }else{
-                        if($(this).next()[0] != undefined ){
-                            $(this).animate({'bottom' : 100+"vh"},300);
-                            // $(this).addClass("test");
-                            
-                            if($(this).next().attr('class') == "aboutArea"){
-                                $("header ul").addClass("active");
-                                $("header ul li").removeClass("active");
-                                $("header h1").addClass("logoBlack");
-                                $("header div span").addClass("menuBottonBlack");
-                            }else{
-                                $("header ul").removeClass("active");
-                                $("header ul li:nth-of-type(3)").addClass("active");
+                            if(mouseWheel > 0){
+                                $(this).prev().animate({'bottom' : 0+"vh"},300);
+                                if($(this).prev().attr('class') == "aboutArea"){
+                                    $("header ul").addClass("active");
+                                }else{
+                                    $("header ul").removeClass("active");
+                                    $("header ul li").removeClass("active");
+                                    $("header ul li:nth-of-type(1)").addClass("active");
+                                    $("header h1").removeClass("logoBlack");
+                                    $("header div span").removeClass("menuBottonBlack");
+                                }
+                            }else if(mouseWheel < 0 ){
+                                if($(this).next()[0] != undefined ){
+                                    $(this).animate({'bottom' : 100+"vh"},300);
+
+                                    if($(this).next().attr('class') == "aboutArea"){
+                                        $("header ul").addClass("active");
+                                        $("header ul li").removeClass("active");
+                                        $("header h1").addClass("logoBlack");
+                                        $("header div span").addClass("menuBottonBlack");
+                                    }else{
+                                        $("header ul").removeClass("active");
+                                        $("header ul li:nth-of-type(3)").addClass("active");
+                                    }
+                                }
                             }
                         }
-                    }
 
-                    if($("header h1").hasClass("logoBlack")){
-                        menuColorboolean = false;
-                    }else{
-                        menuColorboolean = true;
+                        if($("header h1").hasClass("logoBlack")){
+                            menuColorboolean = false;
+                        }else{
+                            menuColorboolean = true;
+                        }
                     }
-                }
+                });
 
-                    // console.log($(this).next().attr('class'));
-                // }else{
-                //     return;
-                // }
-                // $('html, body').animate({'scrollTop' : pos},1000);
-                console.log(currentLocation);
             });
-            
-        });
+    }
 
+    function mainImgChange(){
         var mainImgArr = ["img/mainImg01.jpg","img/mainImg02.jpg","img/mainImg03.jpg","img/mainImg04.jpg","img/mainImg05.jpg"];
         var mainImgArrNum = 1;
 
@@ -106,28 +90,27 @@
                 mainImgArrNum += 1;
             }
         },2500);
+    };
 
-
-
+    function mainVisionClick(){
         $(".visionArea ul li").on('click',function(){
             $(".visionArea ul li").addClass("unActive");
             $(".visionArea ul li").removeClass("Active");
             $(this).removeClass("unActive");
             $(this).addClass("Active");
         });
+    };
 
-
-        
+    function menuClick(){
         $("header div").on("click",function(){
            $("nav").toggleClass("active");
-          
 
             if(!menuColorboolean){
                 $("header h1").toggleClass("logoBlack");
                 $("header div span").toggleClass("menuBottonBlack");
             }
         });
-    });
+    }
     </script>
 </head>
 <body>
