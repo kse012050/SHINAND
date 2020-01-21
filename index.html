@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>신앤드</title>
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css"> 
+    <link rel="stylesheet" href="css/import.css">
+    <script>
+    $(document).ready(function(){
+        var indexNum;
+        var pos;
+        var logoImgSrc = ["img/logo.png","img/logo_white.png"];
+        var currentLocation = 0;
+        var menuColorboolean = true;
+        $('section').each(function(){
+            $(this).on("mousewheel", function (event) { 
+                var mouseWheel = event.originalEvent.wheelDelta;
+                // console.log($(this).index());
+                // if($('section').is(':animated'))return;
+
+                // console.log(mouseWheel);
+                // if(mouseWheel > 0){
+                //     if($(this).prev()[0] != undefined){
+                //         pos = $(this).prev().offset().top;
+                //         indexNum = $(this).prev().index();
+                        
+                //     }
+                // }else{
+                //     if($(this).next()[0] != undefined){
+                //         pos = $(this).next().offset().top;
+                //         indexNum = $(this).next().index();
+                //     }
+                // }
+                // console.log($(this).css("bottom"));
+                // if($(this).css("bottom") != "0px" || $(this).next().css("bottom") != "0"){
+                    if($('section').is(':animated')){
+                        return;
+                    }else{
+                    if(mouseWheel > 0){
+                        $(this).prev().animate({'bottom' : 0+"vh"},300);
+                        // if($(this).css("bottom") == "0px"){
+                        //     $(this).prev().removeClass("test");
+                        // }
+                        if($(this).prev().attr('class') == "aboutArea"){
+                            $("header ul").addClass("active");
+                        }else{
+                            $("header ul").removeClass("active");
+                            $("header ul li").removeClass("active");
+                            $("header ul li:nth-of-type(1)").addClass("active");
+                            $("header h1").removeClass("logoBlack");
+                            $("header div span").removeClass("menuBottonBlack");
+                        }
+                    }else{
+                        if($(this).next()[0] != undefined ){
+                            $(this).animate({'bottom' : 100+"vh"},300);
+                            // $(this).addClass("test");
+                            
+                            if($(this).next().attr('class') == "aboutArea"){
+                                $("header ul").addClass("active");
+                                $("header ul li").removeClass("active");
+                                $("header h1").addClass("logoBlack");
+                                $("header div span").addClass("menuBottonBlack");
+                            }else{
+                                $("header ul").removeClass("active");
+                                $("header ul li:nth-of-type(3)").addClass("active");
+                            }
+                        }
+                    }
+
+                    if($("header h1").hasClass("logoBlack")){
+                        menuColorboolean = false;
+                    }else{
+                        menuColorboolean = true;
+                    }
+                }
+
+                    // console.log($(this).next().attr('class'));
+                // }else{
+                //     return;
+                // }
+                // $('html, body').animate({'scrollTop' : pos},1000);
+                console.log(currentLocation);
+            });
+            
+        });
+
+        var mainImgArr = ["img/mainImg01.jpg","img/mainImg02.jpg","img/mainImg03.jpg","img/mainImg04.jpg","img/mainImg05.jpg"];
+        var mainImgArrNum = 1;
+
+        $(".mainArea div span:last-of-type").text("0"+ (mainImgArr.length));
+        setInterval(function(){
+            // console.log(mainImgArr[mainImgArrNum]);
+            // console.log(mainImgArr.length);
+            // console.log(mainImgArrNum);
+            $(".mainArea").css("background-image","url("+mainImgArr[mainImgArrNum]+")");
+            // console.log($(".mainArea div span:first-of-type").text(mainImgArrNum));
+            $(".mainArea div span:first-of-type").text("0"+ (mainImgArrNum + 1));
+            if(mainImgArrNum >= mainImgArr.length - 1){
+                mainImgArrNum = 0;
+            }else{
+                mainImgArrNum += 1;
+            }
+        },2500);
+
+
+
+        $(".visionArea ul li").on('click',function(){
+            $(".visionArea ul li").addClass("unActive");
+            $(".visionArea ul li").removeClass("Active");
+            $(this).removeClass("unActive");
+            $(this).addClass("Active");
+        });
+
+
+        
+        $("header div").on("click",function(){
+           $("nav").toggleClass("active");
+          
+
+            if(!menuColorboolean){
+                $("header h1").toggleClass("logoBlack");
+                $("header div span").toggleClass("menuBottonBlack");
+            }
+        });
+    });
+    </script>
+</head>
+<body>
+    <div class="wrapArea">
+        <header>
+            <h1><a href="#">logo</a></h1>
+            <ul>
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+
+        <nav>
+            <ul>
+                <li>
+                    <ol>
+                        <li><a href="#">ABOUT</a></li>
+                        <li><a href="#">VISION</a></li>
+                        <li><a href="#">HOME</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <ol>
+                        <li><a href="#">DISTRIBUTION</a></li>
+                        <li><a href="#">LOGISTICS</a></li>
+                        <li><a href="#">TECHNOLOGY</a></li>
+                        <li><a href="#">CONTENTS</a></li>
+                        <li><a href="#">SERVICE</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <ol>
+                        <li><a href="#">KONVINI</a></li>
+                        <li><a href="#">KONVINI EDITION</a></li>
+                        <li><a href="#">KONVINI EXPRESS</a></li>
+                        <li><a href="#">SHIN & KING</a></li>
+                        <li><a href="#">BRAND</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <ol>
+                        <li><a href="#">NEWS</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <ol>
+                        <li><a href="#">CONTACT</a></li>
+                    </ol>
+                </li>
+            </ul>
+        </nav>
+        
+
+        <section class="mainArea">
+            <h2>ENJOY<br/>YOUT LIFE<br/>WITH US</h2>
+            <div>
+                <span>01</span>
+                <span>/</span>
+                <span></span>
+            </div>
+        </section>
+
+        <section class="aboutArea">
+            <h2>ENJOY <br/>YOUT LIFE WITH US</h2>
+            <h3>어떤 옷을 입고, 어떤 공간에서,<br/>어떻게 들길 것인가?</h3>
+            <p>
+                신 앤드는 전 세계 사람들의 취향 있는 삶을 응원합니다. 우리는 한국의 물건과 브랜드, 스토리를 담아 전 세계를 유랑합니다. 세계의 글로벌 브랜드는 변화하고 있습니다. 우리는 한국 브랜드의
+                현재를 잘 담아낸 글로벌 플랫폼으로 한국이 만들고, 소비하고, 향유하는 물건과 이야기를 세계에 전합니다. 우리의 타깃은 삶을 디자인하는 사람들입니다. 자신의 삶을 디자인하는 사람들에게
+                가치있는 물건, 취향이 담긴 스토리, 물건과 내가 하나 되는 공간 속에서 빛깔 좋게 영근 삶을 제안할 것입니다. 일 년 365일 24시간 쉬지 않고 깨어있는 유쾌한 공간. 우리의 공간이 전 세계의 다양한
+                사람들이 소통하는 공간이 되길 희망합니다. 우리는 다양성에 열려있습니다. 뭐든 할 수 있고 무슨 일이든 일어날 수 있습니다. 각자의 취향에 따라 우리의 공간을 바라보는 시각은 다르겠지만,
+                그렇기에 우리의 물건과 스토리, 서비스를 저마다의 취향에 따라 다르게 활용할 수 있을 것입니다. 우리의 플랫폼과 연계된 다양한 플랫폼을 통해 세계와 소통하고, 취향의 유희를 담아낸 물건과 삶과
+                브랜드의 이야기를 담아낸 질 좋은 콘텐츠로 전 세계의 사람을 만나고 싶습니다.
+            </p>
+        </section>
+
+        <section class="visionArea">
+            <h2>vision</h2>
+            <ul>
+                <li>
+                    <div>
+                        <h3>KONVINI</h3>
+                    </div>
+                    <div>
+                        <h3><img src="img/visionTitleImg01.png" alt="KONVINI"></h3>
+                        <dl>
+                            <dt>취향 다반사</dt>
+                            <dd>
+                                더 나은 삶을 만드는 비법은<br/>
+                                취향이 담긴 일상의 좋은 물건에 있다.
+                            </dd>
+                        </dl>
+                        <p>
+                            한국의 현 시대의 트렌드를 반영하는 신진 디자이너 패션의류, 코스메틱, <br/>
+                            라이프 아이템을 소개하는 온라인 쇼핑 플랫폼.
+                        </p>
+                        <div>
+                            <span>konvini.jp</span><br/>
+                            <span>konvini.com.hk</span>
+                        </div>
+                    </div>
+                    <span>+</span>
+                </li>
+                <li>
+                    <div>
+                        <h3>KONVINI EDITION</h3>
+                    </div>
+                    <div>
+                        <h3><img src="img/visionTitleImg02.png" alt="KONVINI EDITION"></h3>
+                        <dl>
+                            <dt>일상 다반사 </dt>
+                            <dd>
+                                풍요로운 삶을 채우는 <br/>
+                                일상의 다양한 이야기가 있다
+                            </dd>
+                        </dl>
+                        <p>
+                            무수히 많은 한국의 매체들 속에서 콘비니만의 시각으로<br/>
+                            선택한 문화와 사람, 공간, 음식, 역사, 전통을 이야기하는<br/>
+                            코리안 콘텐츠 허브.
+                        </p>
+                        <div>
+                            <span>www.konviniedition.com</span>
+                        </div>
+                    </div>
+                    <span>+</span>
+                </li>
+                <li>
+                    <div>
+                        <h3>KONVINI EXPRESS</h3>
+                    </div>
+                    <div>
+                        <h3><img src="img/visionTitleImg03.png" alt="KONVINI EXPRESS"></h3>
+                        <dl>
+                            <dt>배송 다반사</dt>
+                            <dd>
+                                보다 넓은 시장, 보다 많은 국가로의<br/>
+                                스마트하고 명확한 물건의 흐름이 있다.
+                            </dd>
+                        </dl>
+                        <p>
+                            글로벌 네트워크와 스마트한 물류로 <br/>
+                            고객의 가치를 실현하는 국제 물류 시스템.
+                        </p>
+                        <div>
+                            <span>www.konviniedition.com</span>
+                        </div>
+                    </div>
+                    <span>+</span>
+                </li>
+                <li>
+                    <div>
+                        <h3>SHIN & KING</h3>
+                    </div>
+                    <div>
+                        <h3><img src="img/visionTitleImg04.png" alt="SHIN & KING"></h3>
+                        <dl>
+                            <dt>유희 다반사</dt>
+                            <dd>
+                                현대의 글로벌 연희 문화와 사람, <br/>
+                                그리고 브랜드의 유쾌하고 다양한 만남이 있다.
+                            </dd>
+                        </dl>
+                        <p>
+                            문화, 예술, 브랜드와의  협업을 통한 시너지로 <br/>
+                            관계의 미학을 추구하는 Marketing & Advertising Global Network, <br/>
+                            신앤드와 킹엔터테인먼트의 문화콘텐츠 합작법인.
+                        </p>
+                        <div>
+                            <span>www.shinandking.com</span>
+                        </div>
+                    </div>
+                    <span>+</span>
+                </li>
+            </ul>
+        </section>
+
+     
+    </div>
+</body>
+</html>
