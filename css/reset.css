@@ -49,5 +49,5 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
+*{word-break: keep-all;}
 h1 , h2 , .mainArea div span , .visionArea ul li h3 , .visionArea ul li div:nth-of-type(2) span, nav ul li ol li a{font-family: 'Anton';}

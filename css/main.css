@@ -15,7 +15,8 @@ header div{width: 56px; position: fixed; top: calc(50% - 11px); left: 30px; z-in
 header div span{display: block; height: 4px; background-color: white; transition: 1s 0.5s;}
 header div span:first-of-type{margin-bottom: 14px;}
 header div span:nth-of-type(2){width: 36px}
-header div span.menuBottonBlack{background-color: black;}
+/* header div span.menuBottonBlack{background-color: black;} */
+header h1.logoBlack ~ div span{background-color: black;}
 
 nav{position: fixed; left: -100%; top: 0; width: 100%; height: 100%; background-color: black; z-index: 2;  transition: 1s cubic-bezier(0.75, 0.01, 1, 1); z-index: 2; overflow: hidden;}
 nav.active{left: 0;}
@@ -93,7 +94,11 @@ section:first-of-type{ background-image:url(../img/mainImg01.jpg); background-re
 .visionArea ul li:last-of-type{background-image: url(../img/visionImg04.jpg);}
 
 .visionArea ul li > div:nth-of-type(2){opacity: 0; position: absolute; right: 8%; top: 0; height: 100%; display: flex; flex-direction: column; justify-content: center; transform: translateX(-100px);}
-.visionArea ul li > div:nth-of-type(2) h3{margin-bottom: 3%;}
+.visionArea ul li > div:nth-of-type(2) h3{margin-bottom: 3%; background-repeat: no-repeat; background-position: center center; background-size: contain; width: 273px; height: 87px; text-indent: -9999px;}
+.visionArea ul li:nth-of-type(1) > div:nth-of-type(2) h3{background-image: url(../img/visionTitleImg01.png);}
+.visionArea ul li:nth-of-type(2) > div:nth-of-type(2) h3{background-image: url(../img/visionTitleImg02.png);}
+.visionArea ul li:nth-of-type(3) > div:nth-of-type(2) h3{background-image: url(../img/visionTitleImg03.png);}
+.visionArea ul li:nth-of-type(4) > div:nth-of-type(2) h3{background-image: url(../img/visionTitleImg04.png);}
 .visionArea ul li > div:nth-of-type(2) dl{ margin-bottom: 11.5%;}
 .visionArea ul li > div:nth-of-type(2) dl dt{font-size: 80px; font-weight: 600; margin-bottom: 3.5%}
 .visionArea ul li > div:nth-of-type(2) dl dd{font-size: 30px; font-weight: 600; line-height: 1.8;}
@@ -145,9 +150,10 @@ nav ul > li ol li:last-of-type{font-size: 4.45vw;}
 /* 모바일 */
 @media screen and (max-width : 767px){
 header ul{display: none;}
-header h1{right: 30px; left: auto;}
+header h1{right: 30px; left: auto; transition: 0.1s;}
+header div span{transition: 0.1s;}
 
-.mainArea{height: 1100px; position: relative;}
+/* .mainArea{height: 1100px; position: relative;}
 
 .aboutArea{padding: 120px 30px 0 30px;}
 .aboutArea h2{font-size: 110px; margin-bottom: 85px;  }
@@ -165,6 +171,61 @@ header h1{right: 30px; left: auto;}
 
 .visionArea ul li.Active{height: 1080px;}
 .visionArea ul li.Active::after{background-color: rgba(6,55,142,0.9);}
+.visionArea ul li:first-of-type.Active{background-position:-60px top;} */
+
+
+.mainArea{height: 100vh; position: relative;}
+
+.aboutArea{padding: 120px 30px 0 30px;}
+.aboutArea h2{font-size: 110px; margin-bottom: 85px;  }
+.aboutArea h3{font-size: 42px; font-weight: 800; line-height: 1.5; margin-bottom: 45px;}
+.aboutArea p{font-size: 22px; line-height: 2; margin-bottom: 120px;}
+
+.visionArea ul{display: block;}
+.visionArea ul li{height: 25vh;}
+.visionArea ul li:first-of-type{background-size: 230%; background-position: -60px -173px;}
+/* .visionArea ul li:nth-of-type(2){background-position: left -170px;} */
+.visionArea ul li:nth-of-type(2){background-position: left bottom;}
+/* .visionArea ul li:nth-of-type(3){background-image: url(../img/m_visionImg03.jpg); background-position: left -580px;}
+.visionArea ul li:nth-of-type(3).Active{background-position: left top;}
+.visionArea ul li:nth-of-type(4){background-image: url(../img/m_visionImg04.jpg); background-position: left -580px;}
+.visionArea ul li:nth-of-type(4).Active{background-position: left top;} */
+.visionArea ul li > div:first-of-type , .visionArea ul li.unActive > div:first-of-type{position: absolute; left: 40px; top: 40px; font-size: 30px; z-index: 1;}
+.visionArea ul li > span , .visionArea ul li:first-of-type.unActive span{position: absolute; right: 40px; top: 30px; font-size: 50px; z-index: 1;}
+
+.visionArea ul li > div:nth-of-type(2){right: 0; width: 100%; padding: 0 30px; box-sizing: border-box;}
+.visionArea ul li > div:nth-of-type(2) *{color: white;}
+
+.visionArea ul li.Active{height: 75vh;}
+.visionArea ul li.Active::after{background-color: rgba(6,55,142,0.9);}
 .visionArea ul li:first-of-type.Active{background-position:-60px top;}
+
+.visionArea ul li.Active div:first-of-type , .visionArea ul li.Active span{color: white;}
+
+
+.visionArea ul li:nth-of-type(1) > div:nth-of-type(2) h3{background-image: url(../img/m_visionTitleImg01.png);}
+.visionArea ul li:nth-of-type(2) > div:nth-of-type(2) h3{background-image: url(../img/m_visionTitleImg02.png);}
+.visionArea ul li:nth-of-type(3) > div:nth-of-type(2) h3{background-image: url(../img/m_visionTitleImg03.png);}
+.visionArea ul li:nth-of-type(4) > div:nth-of-type(2) h3{background-image: url(../img/m_visionTitleImg04.png);}
+}
+
+@media screen and (max-width : 600px){
+.mainArea h2{font-size: 100px;}
+    
+.aboutArea{padding: 60px 15px 0 15px;}
+.aboutArea h2{font-size: 70px; margin-bottom: 40px;  }
+.aboutArea h3{font-size: 25px; font-weight: 800; line-height: 1.5; margin-bottom: 20px;}
+.aboutArea p{font-size: 17px; line-height: 1.5; margin-bottom: 60px;}
+
+.visionArea ul li > div:nth-of-type(2){padding: 0 15px;}
+.visionArea ul li > div:nth-of-type(2) dl{margin-bottom: 6.5%;}
+.visionArea ul li > div:nth-of-type(2) dl dt{font-size: 40px;}
+.visionArea ul li > div:nth-of-type(2) dl dd{font-size: 20px; line-height: 1.5;}
+.visionArea ul li > div:nth-of-type(2) p{font-size: 17px; line-height: 1.2;}
+
+}
+
+@media screen and (max-width : 400px){
+    .visionArea ul li.Active{height: 100vh;}
 
 }

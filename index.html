@@ -11,20 +11,44 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css"> 
     <link rel="stylesheet" href="css/import.css">
     <script>
+
+    var menuColorboolean = true;
+    var mainMobileMainAreaH;
     $(document).ready(function(){
         mainImgChange();
         mainVisionClick();
         menuClick();
         scrollEvent();
 
+
+        $(window).resize(function(){
+            if($(window).width() < 768){
+                mainMobileMainAreaH = parseInt($(".mainArea").css("height").replace(/[^0-9]/g,""));
+                if($("header h1").hasClass("logoBlack") && $(window).scrollTop() < mainMobileMainAreaH ){
+                    $("header h1").removeClass("logoBlack");
+                }
+
+                // section 의 css bottom 값이 0이 아니면 0으로 만듭니다.
+                $('section').each(function(){
+                    var mainSectionResize = parseInt($(this).css("bottom").replace(/[^0-9]/g,""));
+                    if(mainSectionResize > 0){
+                        $(this).css("bottom","0");
+                    }
+                    // console.log(typeof(parseInt($('section').css("bottom").replace(/[^0-9]/g,""))));
+                });
+            }
+        });
+
+     
     });
+
+    
 
     function scrollEvent(){
         var indexNum;
         var pos;
         var logoImgSrc = ["img/logo.png","img/logo_white.png"];
         var currentLocation = 0;
-        var menuColorboolean = true;
             $('section').each(function(){
                 $(this).on("mousewheel", function (event) {
 
@@ -42,7 +66,7 @@
                                     $("header ul li").removeClass("active");
                                     $("header ul li:nth-of-type(1)").addClass("active");
                                     $("header h1").removeClass("logoBlack");
-                                    $("header div span").removeClass("menuBottonBlack");
+                                    // $("header div span").removeClass("menuBottonBlack");
                                 }
                             }else if(mouseWheel < 0 ){
                                 if($(this).next()[0] != undefined ){
@@ -52,7 +76,7 @@
                                         $("header ul").addClass("active");
                                         $("header ul li").removeClass("active");
                                         $("header h1").addClass("logoBlack");
-                                        $("header div span").addClass("menuBottonBlack");
+                                        // $("header div span").addClass("menuBottonBlack");
                                     }else{
                                         $("header ul").removeClass("active");
                                         $("header ul li:nth-of-type(3)").addClass("active");
@@ -66,11 +90,47 @@
                         }else{
                             menuColorboolean = true;
                         }
+                    }else{
+                        
+                        // console.log(scrollPercent);
+                        // var mainMobileH1Top = $("h1").offset().top;
+                        // console.log(mainMobileH1Top);
+                        // var mainMobileMainAreaH = parseInt($(".mainArea").css("height").replace(/[^0-9]/g,""));
+                        // console.log("메인" + (mainMobileMainAreaH -35));
+                        // if(mainMobileH1Top >= mainMobileMainAreaH -50){
+                        //     $("header h1").addClass("logoBlack");
+                        // }else{
+                        //     $("header h1").removeClass("logoBlack");
+                        // }
+                        // if(scrollPercent > 35){
+                        //     $("header h1").addClass("logoBlack");
+                        // }else{
+                        //     $("header h1").removeClass("logoBlack");
+                        // }
+                        mainMobileMainAreaH = parseInt($(".mainArea").css("height").replace(/[^0-9]/g,""));
+                        // // console.log($(window).scrollTop());
+                        // console.log(scrollPercent);
+                        // if(mouseWheel > 0){
+                          
+                        // }else if(mouseWheel < 0 && $(window).scrollTop() > (mainMobileMainAreaH - 100)){
+                        //     $("header h1").addClass("logoBlack");
+                        // }
+                        setTimeout(function(){
+                            // console.log("0 : " + $(window).scrollTop());
+                            // console.log("1 : " + mainMobileMainAreaH);
+                            if(mainMobileMainAreaH < $(window).scrollTop() +30){
+                                $("header h1").addClass("logoBlack");
+                            }else{
+                                $("header h1").removeClass("logoBlack");
+                            }
+                        },250);
                     }
                 });
 
             });
     }
+
+
 
     function mainImgChange(){
         var mainImgArr = ["img/mainImg01.jpg","img/mainImg02.jpg","img/mainImg03.jpg","img/mainImg04.jpg","img/mainImg05.jpg"];
@@ -98,6 +158,10 @@
             $(".visionArea ul li").removeClass("Active");
             $(this).removeClass("unActive");
             $(this).addClass("Active");
+            if($(window).width() <= 768){
+                $(".visionArea ul li").children("span").text("+");
+                $(this).children("span").text("-");
+            }
         });
     };
 
@@ -199,7 +263,10 @@
                         <h3>KONVINI</h3>
                     </div>
                     <div>
-                        <h3><img src="img/visionTitleImg01.png" alt="KONVINI"></h3>
+                        <h3>
+                            <!-- <img src="img/visionTitleImg01.png" alt="KONVINI"> -->
+                            KONVINI
+                        </h3>
                         <dl>
                             <dt>취향 다반사</dt>
                             <dd>
@@ -223,7 +290,10 @@
                         <h3>KONVINI EDITION</h3>
                     </div>
                     <div>
-                        <h3><img src="img/visionTitleImg02.png" alt="KONVINI EDITION"></h3>
+                        <h3>
+                            <!-- <img src="img/visionTitleImg02.png" alt="KONVINI EDITION"> -->
+                            KONVINI EDITION
+                        </h3>
                         <dl>
                             <dt>일상 다반사 </dt>
                             <dd>
@@ -247,7 +317,10 @@
                         <h3>KONVINI EXPRESS</h3>
                     </div>
                     <div>
-                        <h3><img src="img/visionTitleImg03.png" alt="KONVINI EXPRESS"></h3>
+                        <h3>
+                            <!-- <img src="img/visionTitleImg03.png" alt="KONVINI EXPRESS"> -->
+                            KONVINI EXPRESS
+                        </h3>
                         <dl>
                             <dt>배송 다반사</dt>
                             <dd>
@@ -270,7 +343,10 @@
                         <h3>SHIN & KING</h3>
                     </div>
                     <div>
-                        <h3><img src="img/visionTitleImg04.png" alt="SHIN & KING"></h3>
+                        <h3>
+                            <!-- <img src="img/visionTitleImg04.png" alt="SHIN & KING"> -->
+                            SHIN & KING
+                        </h3>
                         <dl>
                             <dt>유희 다반사</dt>
                             <dd>
