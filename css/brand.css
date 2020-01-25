@@ -1,0 +1,19 @@
+/* header{display: none;}
+nav{display: none;} */
+
+.BrandWrapArea > section{background-color: black;}
+.BrandWrapArea > *{color: white;}
+
+
+
+/* .BrandWrapArea section div.pageArea:first-of-type{display: flex; flex-direction: column; justify-content: center;}
+.BrandWrapArea section div.pageArea:first-of-type h3{font-size: 52px;}
+.BrandWrapArea section div.pageArea:first-of-type p{font-size: 18px;} */
+
+.BrandWrapArea section div.pageArea:first-of-type{width: 100%; max-width: 1350px; margin: 0 auto; display: flex; flex-direction: column; justify-content: center;}
+.BrandWrapArea section div.pageArea:first-of-type h2{font-size: 144px;margin-bottom: 4%; line-height: 1.1;}
+.BrandWrapArea section div.pageArea:first-of-type h3{font-size: 62px; font-weight: 600; margin-bottom: 2%; line-height: 1.4;}
+.BrandWrapArea section div.pageArea:first-of-type p{font-size: 18px; font-weight: 600; line-height: 2.3; word-break: keep-all;}
+.BrandWrapArea section div.pageArea:first-of-type{display: none;}
+
+

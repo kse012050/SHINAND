@@ -1,5 +1,5 @@
 /* *{font-family: 'Anton'; font-weight: 100;} */
-header{}
+/* header{}
 header h1{position: fixed;top: 30px; left: 30px; z-index: 3; width: 193px; height: 33px; background-image: url(../img/logo_white.png); background-repeat: no-repeat; background-position: left top; background-size: contain;  opacity: 1; transition: 1s 0.5s;}
 header h1 a{text-indent: -9999px; display: block; height: 100%;}
 header h1 a img{}
@@ -16,7 +16,7 @@ header div span{display: block; height: 4px; background-color: white; transition
 header div span:first-of-type{margin-bottom: 14px;}
 header div span:nth-of-type(2){width: 36px}
 /* header div span.menuBottonBlack{background-color: black;} */
-header h1.logoBlack ~ div span{background-color: black;}
+/* header h1.logoBlack ~ div span{background-color: black;}
 
 nav{position: fixed; left: -100%; top: 0; width: 100%; height: 100%; background-color: black; z-index: 2;  transition: 1s cubic-bezier(0.75, 0.01, 1, 1); z-index: 2; overflow: hidden;}
 nav.active{left: 0;}
@@ -34,27 +34,35 @@ nav ul > li ol li a{color: rgba(255,255,255,0.5); text-decoration: none;}
 nav ul > li ol li:last-of-type a{color: white;}
 nav ul > li ol li:hover:not(:last-of-type) a{color: white;}
 nav ul > li ol li:last-of-type::after{content: ''; display: block; position: absolute; left: 0; bottom: 0; width: 0%; height: 6px; background-color: white; transition: 1s;}
-nav ul > li ol:hover li:last-of-type::after{width: 100%;}
+nav ul > li ol:hover li:last-of-type::after{width: 100%;} */ */
 
 /*스크롤 페이지*/
-@media screen and (min-width:768px){
+/* @media screen and (min-width:768px){
 section{height: 100vh; transition-duration: 1s; overflow: hidden;}
 section{position: fixed; bottom: 0; width: 100%}
 section:nth-of-type(1){z-index: 0; background-color: white; }
 section:nth-of-type(2){z-index: -1; background-color: white; }
 section:nth-of-type(3){z-index: -2; }
 .test{bottom: 100vh;}
-}
+} */
+
 /* mainArea */
-section:first-of-type{ background-image:url(../img/mainImg01.jpg); background-repeat: no-repeat; background-position: center center; background-size: cover; transition-duration: 1s;}
-.mainArea{display: flex; align-items: center; height: 100vh;}
+/* section.mainArea:first-of-type{ } */
+.mainArea{display: flex; align-items: center; height: 100vh; background-image:url(../img/mainImg01.jpg); background-repeat: no-repeat; background-position: center center; background-size: cover; transition-duration: 1s;}
 .mainArea h2{text-align: right; width: 100%; color: white; font-size: 178px;
-     padding-top: 200px;
+     padding-top: 200px; 
      padding-top: 21.5vh;
     }
-.mainArea div{color: white; position: absolute; bottom: 30px; left: 0; width: 100%; text-align: center; font-weight: bold;}
-.mainArea div span{font-weight: 500;}
-
+.mainArea .mainImgPageArea{color: white; position: absolute; bottom: 30px; left: 0; width: 100%; text-align: center; font-weight: bold;}
+.mainArea .mainImgPageArea span{font-weight: 500;}
+.mainArea .mainImgChangeArea{position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: -1; transition: 1s;}
+.mainArea .mainImgChangeArea li{position: absolute; left: 0; top: 0; width: 100%; height: 100%; height: 100%; background-repeat: no-repeat; background-position: center center; transition: 1s; opacity: 0;}
+.mainArea .mainImgChangeArea li:nth-of-type(1){background-image: url(../img/mainImg01.jpg);}
+.mainArea .mainImgChangeArea li:nth-of-type(2){background-image: url(../img/mainImg02.jpg);}
+.mainArea .mainImgChangeArea li:nth-of-type(3){background-image: url(../img/mainImg03.jpg);}
+.mainArea .mainImgChangeArea li:nth-of-type(4){background-image: url(../img/mainImg04.jpg);}
+.mainArea .mainImgChangeArea li:nth-of-type(5){background-image: url(../img/mainImg05.jpg);}
+.mainArea .mainImgChangeArea li.showOpacity{opacity: 1;}
 /*aboutArea*/
 .aboutArea{font-family: 'NanumSquare'; display: flex; flex-direction: column; justify-content: center;}
 .aboutArea *{width: 100%; max-width: 1350px; margin: 0 auto;}
