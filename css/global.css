@@ -1,21 +1,39 @@
 header{}
-header h1{position: fixed;top: 30px; left: 30px; z-index: 3; width: 193px; height: 33px; background-image: url(../img/logo_white.png); background-repeat: no-repeat; background-position: left top; background-size: contain;  opacity: 1; transition: 1s 0.5s;}
+header h1{position: fixed;top: 30px; left: 30px; z-index: 3; width: 193px; height: 33px; background-image: url(../img/logo_white.png); background-repeat: no-repeat; background-position: left top; background-size: contain;  opacity: 1; transition: 0.3s;}
 header h1 a{text-indent: -9999px; display: block; height: 100%;}
 header h1 a img{}
 header h1 a img{opacity: 0;}
 header ul{position: fixed; top:30px; right: 30px; z-index: 1;}
-header ul li{width: 8px; height: 8px; border-radius: 100%; background-color: rgba(255,255,255,0.5); transition: 1s 0.5s;}
+header ul li{width: 8px; height: 8px; border-radius: 100%; background-color: rgba(255,255,255,0.5); transition: 0.3s;}
 header ul li:not(:last-of-type){margin-bottom: 10px;}
 header ul li.active{background-color: white;}
 header div{width: 56px; position: fixed; top: calc(50% - 11px); left: 30px; z-index: 3; cursor: pointer; }
-header div span{display: block; height: 4px; background-color: white; transition: 1s 0.5s;}
+header div span{display: block; height: 4px; background-color: white; transition: 0.3s;}
 header div span:first-of-type{margin-bottom: 14px;}
 header div span:nth-of-type(2){width: 36px}
+header > span{position: fixed; font-size: 16px; letter-spacing: 1px; color: #7f7f7f; bottom: 150px; left: 45px; transform: rotateZ(90deg); transform-origin: left top; z-index: 1;}
 header.headerBlack{}
 header.headerBlack h1{background-image: url(../img/logo.png);}
 header.headerBlack ul li{background-color: rgba(0, 0, 0, 0.5);}
-header.headerBlack ul li.active{color: black;}
+header.headerBlack ul li.active{background-color: black;}
 header.headerBlack div span{background-color: black;}
+
+/*service 메뉴*/
+.serviceArea header{}
+.serviceArea header h1{background-image: url(../img/logo.png);}
+.serviceArea header ul li{background-color: rgba(0, 0, 0, 0.5);}
+.serviceArea header ul li.active{background-color: black;}
+.serviceArea header div span{background-color: black;}
+
+
+/* news 메뉴 */
+/* .newsArea header{}
+.newsArea header h1{background-image: url(../img/logo.png);}
+.newsArea header ul{display: none;}
+.newsArea header ul li{background-color: rgba(0, 0, 0, 0.5);}
+.newsArea header ul li.active{background-color: black;}
+.newsArea header div span{background-color: black;} */
+
 
 nav{position: fixed; left: -100%; top: 0; width: 100%; height: 100%; background-color: black; z-index: 2;  transition: 1s cubic-bezier(0.75, 0.01, 1, 1); z-index: 2; overflow: hidden;}
 nav.active{left: 0;}
@@ -36,6 +54,10 @@ nav ul > li ol li:last-of-type::after{content: ''; display: block; position: abs
 nav ul > li ol:hover li:last-of-type::after{width: 100%;}
 
 
+@media screen and (max-width : 1800px){
+nav ul > li ol li:last-of-type{font-size: 4.45vw;}
+}
+
 /*스크롤 페이지*/
 @media screen and (min-width:768px){
 section{height: 100vh; transition:bottom 1s; overflow: hidden;}
@@ -43,8 +65,39 @@ section{position: fixed; bottom: 0vh; width: 100%}
 section:nth-of-type(1){z-index: 0; background-color: white; }
 section:nth-of-type(2){z-index: -1; background-color: white; }
 section:nth-of-type(3){z-index: -2; }
-
+section:nth-of-type(4){z-index: -3; }
+section:nth-of-type(5){z-index: -4; }
+section:nth-of-type(6){z-index: -5; }
+    
+div.pageArea:not(:first-of-type){position: absolute; top: 100vh; left: 0; width: 100%; height: 100%; transition: 1s;}
+div.pageArea:not(:first-of-type).test{top: 0vh;}
 section div[class *="pageArea"]{height: 100%;}
 .test{bottom: 100vh;}
 .scrollClass{bottom: 100vh;}
+
+/* nav{position: relative;} */
+nav footer{position: absolute; bottom: 30px; left: 0; width: 100%;}
+nav footer p{color: white;}
 }
+
+@media screen and (max-width:1366px){
+header h1{left: calc(50% - 96.5px);}
+header div{top: 30px;}
+.visionArea ul li.Active::after{content: ''; position: absolute; width: 100%; height: 100%; background-color: rgba(255,255,255,0.5); }
+.visionArea ul li.unActive > div:first-of-type{left: 39%; top: 10vh;}
+.visionArea ul li.unActive > div:first-of-type h3{transform-origin: left bottom; width: 300px;}
+nav ul > li{margin: 0;}
+
+.aboutArea{padding: 75px 30px 0;}
+}
+
+
+
+@media screen and (max-width:768px){
+header ul{display: none;}
+header h1{right: 30px; left: auto; transition: 0.1s;}
+header div span{transition: 0.1s;}
+
+}
+
+nav footer{display: none;}

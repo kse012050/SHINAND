@@ -1,0 +1,42 @@
+
+/* news 부분*/
+/* news 공통 부분*/
+.newsArea .newsContentsArea a{color: black; text-decoration: none;}
+.newsArea{width: 100%; height: 100vh; max-width: 1350px; margin: 0 auto;  display: flex; flex-direction: column; justify-content: center;}
+.newsContentsArea{position: relative;}
+/* news 제목 부분*/
+.newsContentsArea h2{font-size: 80px; margin-bottom: 5vh;}
+/* news 컨텐츠 부분*/
+.newsContentsArea > ul{display: flex; flex-direction: column;}
+.newsContentsArea > ul li{}
+.newsContentsArea > ul li:not(:last-of-type){margin-bottom: 3.5vh;}
+.newsContentsArea > ul li figure{display: flex;}
+.newsContentsArea > ul li figure img{margin-right: 2%; }
+.newsContentsArea > ul li figure figcaption{display: flex; flex-direction: column; justify-content: space-around;}
+.newsContentsArea > ul li figure figcaption span:first-of-type{font-size: 20px; font-weight: 900;}
+.newsContentsArea > ul li figure figcaption h3{font-size: 30px; font-weight: 500;}
+.newsContentsArea > ul li figure figcaption p{font-size: 18px; font-weight: 600;}
+.newsContentsArea > ul li figure figcaption span:last-of-type{font-size: 18px; font-weight: 900;}
+/* news 컨텐츠 페이지 부분*/
+.newsPageArea{position: absolute; left: 0; bottom: -5vh; width: 100%; text-align: center;}
+.newsPageArea ul li{display: inline-block;}
+.newsPageArea ul li a{font-size: 20px; font-weight: 900; padding: 0 10px;}
+.newsPageArea ul li:first-of-type a , .newsPageArea ul li:last-of-type a{font-size: 28px; font-weight: 600; font-family: 'NanumSquare';}
+
+
+
+
+/* news list 부분*/
+/* news list 공통 부분*/
+.newsListArea{width: 100%; height: 100vh; display: flex; flex-direction: column;}
+/* news list 제목 부분*/
+.newsListArea .newsListTitleArea{height: 31vh; width: 100%; max-width: 1350px; margin: 0 auto; display: flex; flex-direction: column; justify-content: flex-end; position: relative; margin-bottom: 4vh;}
+.newsListArea .newsListTitleArea h2{font-size: 80px; margin-bottom: 7vh;}
+.newsListArea .newsListTitleArea h3{font-size: 40px; }
+.newsListArea .newsListTitleArea h3 span{display: block; font-size: 20px; margin-bottom: 3vh;}
+.newsListArea .newsListTitleArea > span{ position: absolute; right: 0; bottom: 0; font-size: 17px; font-weight: 600;}
+/* news list 컨텐츠 부분*/
+.newsListArea .newsListContentsArea{height: 65vh; overflow-y: scroll;}
+.newsListArea .newsListContentsArea div{width: 100%; max-width: 1350px; margin: 0 auto; text-align: center;}
+.newsListArea .newsListContentsArea div *:not(img){text-align: left; font-size: 18px; font-weight: 500;}
+
