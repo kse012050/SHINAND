@@ -40,3 +40,41 @@
 .newsListArea .newsListContentsArea div{width: 100%; max-width: 1350px; margin: 0 auto; text-align: center;}
 .newsListArea .newsListContentsArea div *:not(img){text-align: left; font-size: 18px; font-weight: 500;}
 
+@media screen and (max-width: 1800px){
+.newsContentsArea{padding: 0 50px 0 100px;}
+
+.newsListArea .newsListTitleArea{padding: 0 10px; box-sizing: border-box;}
+.newsListArea .newsListTitleArea h2{margin-bottom: 3vh}
+.newsListArea .newsListTitleArea > span{right: 10px;}
+}
+
+@media screen and (max-width: 1366px){
+.newsContentsArea{padding: 0 10px;}
+}
+
+@media screen and (max-width: 767px){
+.newsArea{height: auto;}
+.newsContentsArea{padding-top: 100px;}
+.newsContentsArea > ul li figure img{width: 40%;}
+
+.newsListArea{padding-top: 40px;}
+.newsListArea .newsListContentsArea{overflow-y: initial; height: auto; padding-bottom: 100px;}
+.newsListArea .newsListTitleArea h3{margin-bottom: 3vh;}
+.newsListArea .newsListTitleArea > span{position: static;}
+.newsListArea .newsListContentsArea div img{width: 100%;}
+.newsListArea .newsListContentsArea div > *:not(img){padding:0 10px; box-sizing: border-box;}
+}
+@media screen and (max-width: 600px){
+.newsContentsArea > ul li figure{flex-direction: column; padding-bottom: 50px;}
+.newsContentsArea > ul li figure img{width: 100%;}
+}
+@media screen and (max-width: 400px){
+.newsPageArea ul li a{font-size: 18px; padding:0 7px;}
+.newsPageArea ul li:first-of-type a, .newsPageArea ul li:last-of-type a{font-size: 25px;}
+}
+
+@media screen and (max-width: 360px){
+.newsListArea .newsListTitleArea h3{font-size: 30px;}
+}
+
+

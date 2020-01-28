@@ -12,6 +12,8 @@ header div span{display: block; height: 4px; background-color: white; transition
 header div span:first-of-type{margin-bottom: 14px;}
 header div span:nth-of-type(2){width: 36px}
 header > span{position: fixed; font-size: 16px; letter-spacing: 1px; color: #7f7f7f; bottom: 150px; left: 45px; transform: rotateZ(90deg); transform-origin: left top; z-index: 1;}
+header > span.newsLink{transform: rotateZ(0deg); right: 30px; bottom: 30px; font-family: 'NanumSquare'; font-weight: 900; font-size: 22px; color: black;}
+header > span.newsLink a{text-decoration: none; color: black; font-weight: 900; font-size: 20px;}
 header.headerBlack{}
 header.headerBlack h1{background-image: url(../img/logo.png);}
 header.headerBlack ul li{background-color: rgba(0, 0, 0, 0.5);}
@@ -68,6 +70,10 @@ section:nth-of-type(3){z-index: -2; }
 section:nth-of-type(4){z-index: -3; }
 section:nth-of-type(5){z-index: -4; }
 section:nth-of-type(6){z-index: -5; }
+section:nth-of-type(7){z-index: -6; }
+section:nth-of-type(8){z-index: -7; }
+section:nth-of-type(9){z-index: -8; }
+section:nth-of-type(10){z-index: -9; }
     
 div.pageArea:not(:first-of-type){position: absolute; top: 100vh; left: 0; width: 100%; height: 100%; transition: 1s;}
 div.pageArea:not(:first-of-type).test{top: 0vh;}
@@ -78,17 +84,24 @@ section div[class *="pageArea"]{height: 100%;}
 /* nav{position: relative;} */
 nav footer{position: absolute; bottom: 30px; left: 0; width: 100%;}
 nav footer p{color: white;}
+
 }
 
 @media screen and (max-width:1366px){
 header h1{left: calc(50% - 96.5px);}
 header div{top: 30px;}
+
+nav ul{flex-direction: column;}
+nav ul > li{margin: 0; height: auto;}
+nav ul > li:not(:last-of-type){margin: 0;}
+nav ul > li:last-of-type{margin: 0;}
+nav ul > li ol li:not(:last-of-type){display: none;}
+nav ul > li ol li:last-of-type{font-size: 60px;}
+
+.aboutArea{padding: 75px 30px 0;}
 .visionArea ul li.Active::after{content: ''; position: absolute; width: 100%; height: 100%; background-color: rgba(255,255,255,0.5); }
 .visionArea ul li.unActive > div:first-of-type{left: 39%; top: 10vh;}
 .visionArea ul li.unActive > div:first-of-type h3{transform-origin: left bottom; width: 300px;}
-nav ul > li{margin: 0;}
-
-.aboutArea{padding: 75px 30px 0;}
 }
 
 
@@ -97,7 +110,7 @@ nav ul > li{margin: 0;}
 header ul{display: none;}
 header h1{right: 30px; left: auto; transition: 0.1s;}
 header div span{transition: 0.1s;}
-
+header > span{display: none;}
 }
 
 nav footer{display: none;}

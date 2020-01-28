@@ -13,7 +13,7 @@
 
         $(window).resize(function(){
             if($(window).width() < 768){
-                mainMobileMainAreaH = parseInt($(".mainArea").css("height").replace(/[^0-9]/g,""));
+                // mainMobileMainAreaH = parseInt($(".mainArea").css("height").replace(/[^0-9]/g,""));
                 if($("header h1").hasClass("logoBlack") && $(window).scrollTop() < mainMobileMainAreaH ){
                     $("header h1").removeClass("logoBlack");
                 }
@@ -37,10 +37,13 @@
     function scrollEvent(){
         var scrollClass;
         var pageScrollClass = 1;
+        var navPageNum = 0;
         $('section').each(function(){
             // section의 갯수 만큼 네비게이션 추가
-            $("header ul").append("<li></li>");
-            $("header ul li").eq(0).addClass("active")
+            if($(this).hasClass("navPage")){
+                $("header ul").append("<li></li>");
+                $("header ul li").eq(navPageNum).addClass("active")
+            }
             
                 $(this).on("DOMMouseScroll mousewheel", function (event) {
                     scrollClass = $(".scrollClass");
@@ -92,22 +95,29 @@
                         }
 
                         // 네비게이션 위치
-                        $("header ul li").removeClass("active");
-                        $("header ul li").eq(scrollClass.length).addClass("active");
+                        
+                        if($(this).hasClass("navPage") && $(this).hasClass("scrollClass")){
+                            $("header ul li").removeClass("active");
+                            navPageNum +=1
+                        }
+                        // console.log(scrollClass.length);
+                        // console.log($(".navPage").length);
+                        console.log($(this).hasClass("navPage","scrollClass").length);
+                        $("header ul li").eq(navPageNum).addClass("active");
 
                
                     }else{
                         
                         
-                        mainMobileMainAreaH = parseInt($(".mainArea").css("height").replace(/[^0-9]/g,""));
+                        // mainMobileMainAreaH = parseInt($(".mainArea").css("height").replace(/[^0-9]/g,""));
                        
-                        setTimeout(function(){
-                            if(mainMobileMainAreaH < $(window).scrollTop() +30){
-                                $("header").addClass("headerBlack");
-                            }else{
-                                $("header").removeClass("headerBlack");
-                            }
-                        },250);
+                        // setTimeout(function(){
+                        //     if(mainMobileMainAreaH < $(window).scrollTop() +30){
+                        //         $("header").addClass("headerBlack");
+                        //     }else{
+                        //         $("header").removeClass("headerBlack");
+                        //     }
+                        // },250);
                     }
 
                 });
