@@ -11,7 +11,7 @@
 .newsContentsArea > ul li{}
 .newsContentsArea > ul li:not(:last-of-type){margin-bottom: 3.5vh;}
 .newsContentsArea > ul li figure{display: flex;}
-.newsContentsArea > ul li figure img{margin-right: 2%; }
+.newsContentsArea > ul li figure img{margin-right: 2%; width: 360px;}
 .newsContentsArea > ul li figure figcaption{display: flex; flex-direction: column; justify-content: space-around; line-height: 1.5;}
 .newsContentsArea > ul li figure figcaption span:first-of-type{font-size: 20px; font-weight: 900;}
 .newsContentsArea > ul li figure figcaption h3{font-size: 30px; font-weight: 500;}
@@ -29,7 +29,7 @@
 
 /* news list 부분*/
 /* news list 공통 부분*/
-.newsListArea{width: 100%; height: 100vh; display: flex; flex-direction: column;}
+.newsListArea{width: 100%; display: flex; flex-direction: column;}
 /* news list 제목 부분*/
 .newsListArea .newsListTitleArea{height: 31vh; width: 100%; max-width: 1350px; margin: 0 auto; display: flex; flex-direction: column; justify-content: flex-end; position: relative; margin-bottom: 4vh;}
 .newsListArea .newsListTitleArea h2{font-size: 80px; margin-bottom: 7vh;}
@@ -40,6 +40,21 @@
 .newsListArea .newsListContentsArea{height: 65vh; overflow-y: scroll;}
 .newsListArea .newsListContentsArea div{width: 100%; max-width: 1350px; margin: 0 auto; text-align: center;}
 .newsListArea .newsListContentsArea div *:not(img){text-align: left; font-size: 18px; font-weight: 500; line-height: 1.5;}
+
+
+@media screen and (max-height: 875px) and (min-width: 1600px){
+.newsContentsArea h2{position: fixed; right: 30px; top: 30px; font-size: 40px;}
+.newsContentsArea > ul li figure img{width: 300px;}
+}
+
+@media screen and (max-height: 875px) and (max-width: 1600px) and (min-width: 767px){
+.newsContentsArea h2{position: fixed; right: 30px; top: 30px; font-size: 40px;}
+.newsListArea .newsListTitleArea h2{position: fixed; right: 30px; top: 30px; font-size: 40px;}
+}
+
+@media screen and (max-width: 1600px){
+.newsContentsArea > ul li figure img{width: 300px;}
+}
 
 @media screen and (max-width: 1800px){
 .newsContentsArea{padding: 0 50px 0 100px;}
@@ -53,6 +68,9 @@
 .newsContentsArea{padding: 0 10px;}
 }
 
+@media screen and (min-width: 767px){
+.newsListArea{height: 100vh;}
+}
 @media screen and (max-width: 767px){
 .newsArea{height: auto;}
 .newsContentsArea{padding-top: 100px;}
@@ -64,7 +82,9 @@
 .newsListArea .newsListTitleArea > span{position: static;}
 .newsListArea .newsListContentsArea div img{width: 100%;}
 .newsListArea .newsListContentsArea div > *:not(img){padding:0 10px; box-sizing: border-box;}
-}
+body > div > footer{border-top: 1px solid black;}
+.newsArea > footer{margin-top: 65px; }
+} 
 @media screen and (max-width: 600px){
 .newsContentsArea > ul li figure{flex-direction: column;}
 .newsContentsArea > ul li figure img{width: 100%;}

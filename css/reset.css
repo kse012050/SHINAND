@@ -50,7 +50,7 @@ table {
 	border-spacing: 0;
 }
 *{word-break: keep-all;}
-h1 , h2, header > span , .mainArea div span , .visionArea ul li h3 , .visionArea ul li div:nth-of-type(2) span, nav ul li ol li a, 
+h1 , h2, header > span , header ul li.active > span, .mainArea div span , .visionArea ul li h3 , .visionArea ul li div:nth-of-type(2) span, nav ul li ol li a, 
 .BrandWrapArea .brandEditionArea div.pageArea:last-of-type div:first-of-type ul li dl dt, .BrandWrapArea .brandShopArea div.pageArea:last-of-type dl dt,
 .BrandWrapArea .brandSho02pArea div:first-of-type ul:first-of-type li figure dl dt, .BrandWrapArea .brandSho02pArea div:first-of-type div > dl dt,
 .serviceArea h3 , .ST02 > div:nth-of-type(2) ul li ,
