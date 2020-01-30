@@ -65,6 +65,11 @@
                                     }
                                 }
                             }
+
+
+                            if($(this).hasClass("aboutArea")) {
+                                $("header").removeClass("headerBlack");
+                            }
                         // 마우스 휠을 아래로 내렸을 때
                         }else if(mouseWheel < 0 ){
                             // console.log($(this).children(".test").length);
@@ -81,16 +86,20 @@
                                         }
                                 }
                             }
+
+                            if($(this).hasClass("mainArea")) {
+                                $("header").addClass("headerBlack");
+                            }
                         }
 
 
                         scrollClass = $(".scrollClass");
                         // 메인 aboutArea 에 왔을 때, (로고 , 메뉴버튼 , 네비게이션) 색상 변경
-                        if(scrollClass.length > 0 && scrollClass.eq(scrollClass.length -1).next()[0].className =="aboutArea"){
-                            $("header").addClass("headerBlack");
-                        }else{
-                            $("header").removeClass("headerBlack");
-                        }
+                        // if(scrollClass.length > 0 && scrollClass.eq(scrollClass.length -1).next()[0].className =="aboutArea"){
+                        //     $("header").addClass("headerBlack");
+                        // }else{
+                        //     $("header").removeClass("headerBlack");
+                        // }
 
                         // 네비게이션 위치
                         
@@ -113,7 +122,7 @@
                
                     }else{
                         
-                       if($(this).hasClass("mainArea")) {
+                       if($("section").eq(0).hasClass("mainArea")) {
                             mainMobileMainAreaH = parseInt($(".mainArea").css("height").replace(/[^0-9]/g,""));
                         
                             setTimeout(function(){
@@ -128,7 +137,11 @@
 
                 });
 
-            });
+                $(this).on("touchmove", function (event) {
+                    console.log(event.originalEvent);
+                });
+
+            });  // section fin
     }
 
 

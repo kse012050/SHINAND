@@ -219,8 +219,15 @@ background-repeat:no-repeat;background-position: right center; background-size:4
 .ST03 ul li{width: 33.33%;}
 }
 
-/* 모바일 */
+/* 모바일 */ .m_sliderBtn{display: none;}
 @media screen and (max-width:767px){
+.SC02{position: relative;}
+.m_sliderBtn{display: block; position: absolute; top: 50%; font-weight: 900; font-size: 30px; width: 100%;}
+.m_sliderBtn span{position: absolute; display: flex; justify-content: center; align-items: center; width: 40px; height: 40px; background-color: #eeeeee;}
+.m_sliderBtn span img{width: 100%;}
+.m_sliderBtn span:first-of-type{left: 0;}
+.m_sliderBtn span:last-of-type{right: 0;}
+
 .serviceArea{padding-top: 100px;}
 .serviceDistributionArea,.serviceLogistigyArea{display: none;}
 .serviceTechnology01Area ,.serviceTechnology02Area, .serviceTechnology03Area{padding: 0 30px;}

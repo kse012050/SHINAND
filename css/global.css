@@ -26,12 +26,12 @@ header.headerBlack div span{background-color: black;}
 header.headerBlack  > span::after{color: black;}
 
 /*service 메뉴*/
-.serviceArea header{}
+/* .serviceArea header{}
 .serviceArea header h1{background-image: url(../img/logo.png);}
 .serviceArea header ul li{background-color: rgba(0, 0, 0, 0.5);}
 .serviceArea header ul li.active{background-color: black;}
 .serviceArea header div span{background-color: black;}
-.serviceArea header > span::after{color: black;}
+.serviceArea header > span::after{color: black;} */
 
 
 /* news 메뉴 */
@@ -67,6 +67,9 @@ body > div > footer {display: none;}
 nav div ul > li ol li:last-of-type{font-size: 4.45vw;}
 }
 
+
+
+
 /*스크롤 페이지*/
 @media screen and (min-width:768px){
 section{height: 100vh; transition:bottom 1s; overflow: hidden;}
@@ -96,6 +99,10 @@ nav div footer p span::before{content: ''; height:11px ; width: 1px; background-
 nav div footer > span{font-size: 18px; color: white;}
 nav div footer > span a{color: white; margin-left: 20px;}
 
+}
+
+@media screen and (min-width:768px) and (max-width : 1366px){
+nav div footer{display: none;}
 }
 
 @media screen and (max-width:1366px){

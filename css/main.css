@@ -56,7 +56,7 @@ section:nth-of-type(3){z-index: -2; }
 .mainArea .mainImgPageArea{color: white; position: absolute; bottom: 30px; left: 0; width: 100%; text-align: center; font-weight: bold;}
 .mainArea .mainImgPageArea span{font-weight: 500;}
 .mainArea .mainImgChangeArea{position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: -1; transition: 1s;}
-.mainArea .mainImgChangeArea li{position: absolute; left: 0; top: 0; width: 100%; height: 100%; height: 100%; background-repeat: no-repeat; background-position: center center; transition: 1s; opacity: 0;}
+.mainArea .mainImgChangeArea li{position: absolute; left: 0; top: 0; width: 100%; height: 100%; height: 100%; background-repeat: no-repeat; background-position: center center; transition: 1s; opacity: 0; background-size: cover;}
 .mainArea .mainImgChangeArea li:nth-of-type(1){background-image: url(../img/mainImg01.jpg);}
 .mainArea .mainImgChangeArea li:nth-of-type(2){background-image: url(../img/mainImg02.jpg);}
 .mainArea .mainImgChangeArea li:nth-of-type(3){background-image: url(../img/mainImg03.jpg);}
