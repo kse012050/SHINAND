@@ -19,6 +19,8 @@ div.pageArea:not(:first-of-type).test{top: 0vh;}
 .BrandWrapArea section div.pageArea:first-of-type h3{font-size: 62px; font-weight: 600; margin-bottom: 2%; line-height: 1.4;}
 .BrandWrapArea section div.pageArea:first-of-type p{font-size: 18px; font-weight: 600; line-height: 2.3; word-break: keep-all; margin-bottom: 150px;}
 
+.BrandWrapArea .brandSho02pArea div:first-of-type ul:first-of-type li figure dl dd{position: relative; display: inline-block;}
+.BrandWrapArea .brandSho02pArea div:first-of-type ul:first-of-type li figure dl dd::after{content: ''; background: url(../img/brand/brandIcon.png) no-repeat left top; width:17px; height: 17px; position: absolute; right: -25px; top:1px;}
 
 @media screen and (min-width : 767px){
 .BrandWrapArea .brandSho02pArea{display: flex; flex-direction: column; justify-content: center;box-sizing: border-box; background-color: black;} 
@@ -57,7 +59,7 @@ div.pageArea:not(:first-of-type).test{top: 0vh;}
 
 /* brand edition */
 .BrandWrapArea .brandEdition02Area{display: flex; flex-direction: column; justify-content: center;  background-color: black;}
-.BrandWrapArea .brandEdition02Area > *{width: 100%; max-width: 1350px; margin: 0 auto;}
+.BrandWrapArea .brandEdition02Area > *:not(.editionBrandLogoArea){width: 100%; max-width: 1350px; margin: 0 auto;}
 .BrandWrapArea .brandEdition02Area h2{font-size: 78px; text-align: right; line-height: 1.1; margin-bottom: 105px; margin-bottom: 5.5%;}
 .BrandWrapArea .brandEdition02Area div:first-of-type::after{content: ''; display: block; visibility: hidden; clear: both;}
 .BrandWrapArea .brandEdition02Area div:first-of-type ul{width: 48%; }
@@ -68,6 +70,8 @@ div.pageArea:not(:first-of-type).test{top: 0vh;}
 .BrandWrapArea .brandEdition02Area div:first-of-type ul li dl dt{font-size: 30px; font-weight: 500; margin-bottom: 20px; letter-spacing: 1.5px;}
 .BrandWrapArea .brandEdition02Area div:first-of-type ul li dl dd{font-size: 18px;}
 
+.BrandWrapArea .editionBrandLogoArea{position: absolute; left: 0; bottom: 0; width: 100%; padding: 0;}
+.BrandWrapArea .editionBrandLogoArea ul{display: flex; width: 1350px; max-width: 100%; margin: 0 auto;}
 
 
 @media screen and (min-width : 1800px) and (max-height : 850px){
@@ -93,7 +97,7 @@ div.pageArea:not(:first-of-type).test{top: 0vh;}
 .BrandWrapArea .brandSho02pArea > div:first-of-type h2{font-size: 90px; margin-top: 30px; display: flex; align-items: center;}
 
 .BrandWrapArea .brandEdition02Area h2{margin-bottom: 3%; font-size: 70px;}
-.BrandWrapArea .brandEdition02Area > *{width: 100%; padding: 0px 50px 0 100px; box-sizing: border-box;}
+.BrandWrapArea .brandEdition02Area > *:not(.editionBrandLogoArea){width: 100%; padding: 0px 50px 0 100px; box-sizing: border-box;}
 .BrandWrapArea .brandSho02pArea div:first-of-type div{padding-top: 155px;}
 .BrandWrapArea .brandEdition02Area div.brandLogoArea{padding: 0;}
 }
@@ -111,7 +115,7 @@ div.pageArea:not(:first-of-type).test{top: 0vh;}
 
 
 
-.BrandWrapArea .brandEdition02Area > *{padding: 0 30px;}
+.BrandWrapArea .brandEdition02Area > *:not(.editionBrandLogoArea){padding: 0 30px;}
 .BrandWrapArea .brandEdition02Area div.brandLogoArea{padding: 0;}
 }
 
@@ -152,6 +156,7 @@ div.pageArea:not(:first-of-type).test{top: 0vh;}
 
 @media screen and (min-width: 767px){
 .BrandWrapArea .brandEdition02Area div:first-of-type ul li{border-top: 1px solid #404040; padding:20px 0 60px 0; box-sizing: border-box; height: 18vh;}
+
 }
 /* 모바일 */
 @media screen and (max-width: 767px){
@@ -168,6 +173,7 @@ div.pageArea:not(:first-of-type).test{top: 0vh;}
 .BrandWrapArea .brandSho02pArea div:first-of-type div > dl dd{line-height: 1.5;}
 
 .BrandWrapArea .brandEdition02Area div.brandLogoArea{display: none;}
+.BrandWrapArea .editionBrandLogoArea{display: none;}
 
 .BrandWrapArea .brandSho02pArea div:first-of-type ul:first-of-type li figure{width: 100%; max-width: 365px; margin: 0 auto; text-align: left; }
 .BrandWrapArea .brandSho02pArea div:first-of-type ul:first-of-type li:not(:last-of-type){margin-bottom: 55px;}
@@ -176,7 +182,7 @@ div.pageArea:not(:first-of-type).test{top: 0vh;}
 .BrandWrapArea .brandSho02pArea div:first-of-type ul:first-of-type li figure figcaption{line-height: 1.5;}
 .BrandWrapArea .brandSho02pArea div:first-of-type ul:first-of-type li figure figcaption dl dd{font-size: 18px; font-weight: 900;}
 
-.BrandWrapArea .brandEdition02Area > *{padding:0 10px;}
+.BrandWrapArea .brandEdition02Area > *:not(.editionBrandLogoArea){padding:0 10px;}
 .BrandWrapArea .brandEdition02Area h2{font-size: 50px; margin-bottom: 60px;}
 .BrandWrapArea .brandEdition02Area div:first-of-type ul:first-of-type{margin: 0;}
 .BrandWrapArea .brandEdition02Area div:first-of-type ul:last-of-type{margin: 0;}

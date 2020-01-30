@@ -13,7 +13,7 @@
 
         $(window).resize(function(){
             if($(window).width() < 768){
-                // mainMobileMainAreaH = parseInt($(".mainArea").css("height").replace(/[^0-9]/g,""));
+                mainMobileMainAreaH = parseInt($(".mainArea").css("height").replace(/[^0-9]/g,""));
                 if($("header h1").hasClass("logoBlack") && $(window).scrollTop() < mainMobileMainAreaH ){
                     $("header h1").removeClass("logoBlack");
                 }
@@ -40,10 +40,10 @@
         var navPageNum = 0;
         $('section').each(function(){
             // section의 갯수 만큼 네비게이션 추가
-            if($(this).hasClass("navPage")){
-                $("header ul").append("<li></li>");
-                $("header ul li").eq(navPageNum).addClass("active")
-            }
+            // if($(this).hasClass("navPage")){
+                // $("header ul").append("<li></li>");
+                // $("header ul li").eq(0).addClass("active")
+            // }
             
                 $(this).on("DOMMouseScroll mousewheel", function (event) {
                     scrollClass = $(".scrollClass");
@@ -58,6 +58,11 @@
                             }else if(($(this).prev()[0].localName) == "section"){
                                 if(parseInt($("section").eq(scrollClass.length -1 ).css("bottom")) == $(window).height() && parseInt($("section").eq(scrollClass.length).css("bottom")) == 0){
                                     $(this).prev().removeClass("scrollClass");
+                                    if($(this).prev().hasClass("navPageCheck")){
+                                        $(this).prev().removeClass("navPageCheck");
+                                        $("header ul li").removeClass("active");
+                                        $("header ul li").eq($(".navPageCheck").length).addClass("active");
+                                    }
                                 }
                             }
                         // 마우스 휠을 아래로 내렸을 때
@@ -65,22 +70,15 @@
                             // console.log($(this).children(".test").length);
                             // console.log($(this).children(".test").eq($(this).children(".test").length -1).css("top"));
                             
-                            if($(this).children().hasClass("pageArea") && $(this).children(".pageArea").length > pageScrollClass ){
-                                // console.log('$(this).children().hasClass("pageArea") : ' + $(this).children().hasClass("pageArea"));
-                                // console.log(' $(this).children(".pageArea").length : ' + $(this).children(".pageArea").length);
-                                // console.log('pageScrollClass : ' + pageScrollClass);
-                                // console.log('$(this).children(".test").eq(0).height() : ' + $(this).children(".test").eq(0).height());
-                                if($(this).children(".test").eq(0).height() == undefined || $(this).children(".test").eq(pageScrollClass -2).css("top") == "0px"){
-                                    $(this).children().eq(pageScrollClass).addClass("test");
-                                    pageScrollClass = $(this).children(".test").length + 1;
-                                }
-                            }
-                            else if($(this).children(".test").eq($(this).children(".test").length -1).css("top") != "0px" && $(this).children(".test").eq($(this).children(".test").length -1).css("top") != undefined){
-                                // alert();
-                            }else if($(this).next()[0].localName == "section"){
+                             if($(this).next()[0].localName == "section"){
                                 if($(this)[0].className == $('section').eq(0)[0].className || parseInt(scrollClass.eq(scrollClass.length -1).css("bottom")) == $(window).height()){
                                         $(this).addClass("scrollClass");
                                         pageScrollClass = 1;
+                                        if($(this).next().hasClass("navPage")){
+                                            $(this).addClass("navPageCheck");
+                                            $("header ul li").removeClass("active");
+                                            $("header ul li").eq($(".navPageCheck").length).addClass("active");
+                                        }
                                 }
                             }
                         }
@@ -96,28 +94,36 @@
 
                         // 네비게이션 위치
                         
-                        if($(this).hasClass("navPage") && $(this).hasClass("scrollClass")){
-                            $("header ul li").removeClass("active");
-                            navPageNum +=1
-                        }
+                        // if($(this).hasClass("navPage") && $(this).hasClass("scrollClass")){
+                        //     navPageNum +=1
+                        // }
+                        // if($(this).next().hasClass("navPage")){
+                        //     $("header ul li").eq($("header ul li.active").index() + 1).addClass("active");
+                        //     $("header ul li").eq($("header ul li.active").index()).removeClass("active");
+                            // $("header ul li").removeClass("active");
+                            // navPageNum +=1;
+                            // console.log(navPageNum);
+                            // $("header ul li").eq(navPageNum).addClass("active");
+                        // }
                         // console.log(scrollClass.length);
                         // console.log($(".navPage").length);
-                        console.log($(this).hasClass("navPage","scrollClass").length);
-                        $("header ul li").eq(navPageNum).addClass("active");
+                        // console.log($(".navPage.scrollClass").length);
+                        // $("header ul li").eq($(".navPage.scrollClass").length - 1).addClass("active");
 
                
                     }else{
                         
+                       if($(this).hasClass("mainArea")) {
+                            mainMobileMainAreaH = parseInt($(".mainArea").css("height").replace(/[^0-9]/g,""));
                         
-                        // mainMobileMainAreaH = parseInt($(".mainArea").css("height").replace(/[^0-9]/g,""));
-                       
-                        // setTimeout(function(){
-                        //     if(mainMobileMainAreaH < $(window).scrollTop() +30){
-                        //         $("header").addClass("headerBlack");
-                        //     }else{
-                        //         $("header").removeClass("headerBlack");
-                        //     }
-                        // },250);
+                            setTimeout(function(){
+                                if(mainMobileMainAreaH < $(window).scrollTop() +30){
+                                    $("header").addClass("headerBlack");
+                                }else{
+                                    $("header").removeClass("headerBlack");
+                                }
+                            },250);
+                        }
                     }
 
                 });

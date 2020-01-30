@@ -124,7 +124,7 @@ section:nth-of-type(3){z-index: -2; }
 .aboutArea h2{font-size: 100px; margin-bottom: 2%;} 
 .aboutArea h3{font-size: 30px; margin-bottom: 2%;}
 .aboutArea p{line-height: 1.5;}
-nav ul > li ol li:last-of-type{font-size: 4.45vw;}
+/* nav ul > li ol li:last-of-type{font-size: 4.45vw;} */
 /* nav ul > li ol li:not(:last-of-type){font-size: 2.44vw;} */
 }
 
@@ -198,8 +198,8 @@ header div span{transition: 0.1s;}
 .visionArea ul li:nth-of-type(3).Active{background-position: left top;}
 .visionArea ul li:nth-of-type(4){background-image: url(../img/m_visionImg04.jpg); background-position: left -580px;}
 .visionArea ul li:nth-of-type(4).Active{background-position: left top;} */
-.visionArea ul li > div:first-of-type , .visionArea ul li.unActive > div:first-of-type{position: absolute; left: 40px; top: 40px; font-size: 30px; z-index: 1;}
-.visionArea ul li > span , .visionArea ul li:first-of-type.unActive span{position: absolute; right: 40px; top: 30px; font-size: 50px; z-index: 1;}
+.visionArea ul li > div:first-of-type , .visionArea ul li.unActive > div:first-of-type{position: absolute; left: 30px; top: 40px; font-size: 30px; z-index: 1;}
+.visionArea ul li > span , .visionArea ul li:first-of-type.unActive span{position: absolute; right: 30px; top: 30px; font-size: 50px; z-index: 1;}
 
 .visionArea ul li > div:nth-of-type(2){right: 0; width: 100%; padding: 0 30px; box-sizing: border-box;}
 .visionArea ul li > div:nth-of-type(2) *{color: white;}
@@ -215,6 +215,8 @@ header div span{transition: 0.1s;}
 .visionArea ul li:nth-of-type(2) > div:nth-of-type(2) h3{background-image: url(../img/m_visionTitleImg02.png);}
 .visionArea ul li:nth-of-type(3) > div:nth-of-type(2) h3{background-image: url(../img/m_visionTitleImg03.png);}
 .visionArea ul li:nth-of-type(4) > div:nth-of-type(2) h3{background-image: url(../img/m_visionTitleImg04.png);}
+
+.visionArea ul li > div:nth-of-type(2) span::after{background: url(../img/m_icon.png) no-repeat center center; background-size: contain; right: -30px;}
 }
 
 @media screen and (max-width : 600px){

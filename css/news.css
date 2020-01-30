@@ -12,17 +12,18 @@
 .newsContentsArea > ul li:not(:last-of-type){margin-bottom: 3.5vh;}
 .newsContentsArea > ul li figure{display: flex;}
 .newsContentsArea > ul li figure img{margin-right: 2%; }
-.newsContentsArea > ul li figure figcaption{display: flex; flex-direction: column; justify-content: space-around;}
+.newsContentsArea > ul li figure figcaption{display: flex; flex-direction: column; justify-content: space-around; line-height: 1.5;}
 .newsContentsArea > ul li figure figcaption span:first-of-type{font-size: 20px; font-weight: 900;}
 .newsContentsArea > ul li figure figcaption h3{font-size: 30px; font-weight: 500;}
 .newsContentsArea > ul li figure figcaption p{font-size: 18px; font-weight: 600;}
 .newsContentsArea > ul li figure figcaption span:last-of-type{font-size: 18px; font-weight: 900;}
 /* news 컨텐츠 페이지 부분*/
-.newsPageArea{position: absolute; left: 0; bottom: -5vh; width: 100%; text-align: center;}
-.newsPageArea ul li{display: inline-block;}
-.newsPageArea ul li a{font-size: 20px; font-weight: 900; padding: 0 10px;}
-.newsPageArea ul li:first-of-type a , .newsPageArea ul li:last-of-type a{font-size: 28px; font-weight: 600; font-family: 'NanumSquare';}
-
+.newsArea .newsContentsArea .newsPageArea{position: absolute; left: 0; bottom: -5vh; width: 100%; text-align: center;}
+.newsArea .newsContentsArea .newsPageArea ul li{display: inline-block;}
+.newsArea .newsContentsArea .newsPageArea ul li a{font-size: 20px; font-weight: 900; padding: 0 10px; color: #b2b2b2;}
+.newsArea .newsContentsArea .newsPageArea ul li:first-of-type a ,.newsArea .newsContentsArea .newsPageArea ul li:last-of-type a{font-size: 28px; font-weight: 600; font-family: 'NanumSquare'; color: black;}
+.newsArea .newsContentsArea .newsPageArea ul li:hover a{color: black;}
+.newsArea .newsContentsArea .newsPageArea ul li.active a{color: black;}
 
 
 
@@ -38,7 +39,7 @@
 /* news list 컨텐츠 부분*/
 .newsListArea .newsListContentsArea{height: 65vh; overflow-y: scroll;}
 .newsListArea .newsListContentsArea div{width: 100%; max-width: 1350px; margin: 0 auto; text-align: center;}
-.newsListArea .newsListContentsArea div *:not(img){text-align: left; font-size: 18px; font-weight: 500;}
+.newsListArea .newsListContentsArea div *:not(img){text-align: left; font-size: 18px; font-weight: 500; line-height: 1.5;}
 
 @media screen and (max-width: 1800px){
 .newsContentsArea{padding: 0 50px 0 100px;}
@@ -65,7 +66,7 @@
 .newsListArea .newsListContentsArea div > *:not(img){padding:0 10px; box-sizing: border-box;}
 }
 @media screen and (max-width: 600px){
-.newsContentsArea > ul li figure{flex-direction: column; padding-bottom: 50px;}
+.newsContentsArea > ul li figure{flex-direction: column;}
 .newsContentsArea > ul li figure img{width: 100%;}
 }
 @media screen and (max-width: 400px){

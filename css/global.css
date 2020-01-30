@@ -12,7 +12,8 @@ header div span{display: block; height: 4px; background-color: white; transition
 header div span:first-of-type{margin-bottom: 14px;}
 header div span:nth-of-type(2){width: 36px}
 header > span{position: fixed; font-size: 16px; letter-spacing: 1px; color: #7f7f7f; bottom: 150px; left: 45px; transform: rotateZ(90deg); transform-origin: left top; z-index: 1;}
-header > span.newsLink{transform: rotateZ(0deg); right: 30px; bottom: 30px; font-family: 'NanumSquare'; font-weight: 900; font-size: 22px; color: black;}
+header > span::after{content: "→"; font-size: 20px; color: white; font-weight: bold;}
+header > span.newsLink{transform: rotateZ(0deg); left: 30px; bottom: 30px; font-family: 'NanumSquare'; font-weight: 900; font-size: 22px; color: black;}
 header > span.newsLink a{text-decoration: none; color: black; font-weight: 900; font-size: 20px;}
 header.headerBlack{}
 header.headerBlack h1{background-image: url(../img/logo.png);}
@@ -40,24 +41,24 @@ header.headerBlack div span{background-color: black;}
 nav{position: fixed; left: -100%; top: 0; width: 100%; height: 100%; background-color: black; z-index: 2;  transition: 1s cubic-bezier(0.75, 0.01, 1, 1); z-index: 2; overflow: hidden;}
 nav.active{left: 0;}
 
-nav{display: flex; height: 100%; justify-content: center; align-items: center;}
-nav ul{display: flex; width: 100%; height: 100%; justify-content: center; align-items: center; box-sizing: border-box;}
-nav ul > li{height: 40%;}
-nav ul > li:not(:last-of-type){margin-right: 5%;}
-nav ul > li:last-of-type{margin-right: 1%;}
-nav ul > li ol{display: flex; flex-direction: column; justify-content: start; align-items: flex-start;}
-nav ul > li ol li{font-size: 40px; }
-nav ul > li ol li:last-of-type{order: -1; font-size: 80px; margin-bottom: 35px; position: relative;}
-nav ul > li ol li:not(:last-of-type){line-height: 1.5;}
-nav ul > li ol li a{color: rgba(255,255,255,0.5); text-decoration: none;}
-nav ul > li ol li:last-of-type a{color: white;}
-nav ul > li ol li:hover:not(:last-of-type) a{color: white;}
-nav ul > li ol li:last-of-type::after{content: ''; display: block; position: absolute; left: 0; bottom: 0; width: 0%; height: 6px; background-color: white; transition: 1s;}
-nav ul > li ol:hover li:last-of-type::after{width: 100%;}
+nav div{display: flex; height: 100%; justify-content: center; align-items: center; position: relative; width: 100%; max-width: 1470px; margin: 0 auto;}
+nav div ul{display: flex; width: 100%; height: 100%; justify-content: center; align-items: center; box-sizing: border-box;}
+nav div ul > li{height: 40%;}
+nav div ul > li:not(:last-of-type){margin-right: 5%;}
+nav div ul > li:last-of-type{margin-right: 1%;}
+nav div ul > li ol{display: flex; flex-direction: column; justify-content: start; align-items: flex-start;}
+nav div ul > li ol li{font-size: 40px; }
+nav div ul > li ol li:last-of-type{order: -1; font-size: 80px; margin-bottom: 35px; position: relative;}
+nav div ul > li ol li:not(:last-of-type){line-height: 1.5;}
+nav div ul > li ol li a{color: rgba(255,255,255,0.5); text-decoration: none;}
+nav div ul > li ol li:last-of-type a{color: white;}
+nav div ul > li ol li:hover:not(:last-of-type) a{color: white;}
+nav div ul > li ol li:last-of-type::after{content: ''; display: block; position: absolute; left: 0; bottom: 0; width: 0%; height: 6px; background-color: white; transition: 1s;}
+nav div ul > li ol:hover li:last-of-type::after{width: 100%;}
 
 
 @media screen and (max-width : 1800px){
-nav ul > li ol li:last-of-type{font-size: 4.45vw;}
+nav div ul > li ol li:last-of-type{font-size: 4.45vw;}
 }
 
 /*스크롤 페이지*/
@@ -82,8 +83,12 @@ section div[class *="pageArea"]{height: 100%;}
 .scrollClass{bottom: 100vh;}
 
 /* nav{position: relative;} */
-nav footer{position: absolute; bottom: 30px; left: 0; width: 100%;}
-nav footer p{color: white;}
+nav div footer{position: absolute; bottom: 30px; left: 0; width: 100%; display: flex; justify-content: space-between; font-size: 14px;}
+nav div footer p{color: #999999;}
+nav div footer p span{color:#4d4d4d; margin-left: 13px; padding-left: 13px; position: relative;}
+nav div footer p span::before{content: ''; height:11px ; width: 1px; background-color: #4d4d4d; position: absolute; left: 0; top: 2px;}
+nav div footer > span{font-size: 18px; color: white;}
+nav div footer > span a{color: white; margin-left: 20px;}
 
 }
 
@@ -91,12 +96,12 @@ nav footer p{color: white;}
 header h1{left: calc(50% - 96.5px);}
 header div{top: 30px;}
 
-nav ul{flex-direction: column;}
-nav ul > li{margin: 0; height: auto;}
-nav ul > li:not(:last-of-type){margin: 0;}
-nav ul > li:last-of-type{margin: 0;}
-nav ul > li ol li:not(:last-of-type){display: none;}
-nav ul > li ol li:last-of-type{font-size: 60px;}
+nav div ul{flex-direction: column;}
+nav div ul > li{margin: 0; height: auto;}
+nav div ul > li:not(:last-of-type){margin: 0;}
+nav div ul > li:last-of-type{margin: 0;}
+nav div ul > li ol li:not(:last-of-type){display: none;}
+nav div ul > li ol li:last-of-type{font-size: 60px;}
 
 .aboutArea{padding: 75px 30px 0;}
 .visionArea ul li.Active::after{content: ''; position: absolute; width: 100%; height: 100%; background-color: rgba(255,255,255,0.5); }
@@ -111,6 +116,9 @@ header ul{display: none;}
 header h1{right: 30px; left: auto; transition: 0.1s;}
 header div span{transition: 0.1s;}
 header > span{display: none;}
+header > span.newsLink{display: block;}
+
+nav div footer{display: none;}
 }
 
-nav footer{display: none;}
+/* nav div footer{display: none;} */
