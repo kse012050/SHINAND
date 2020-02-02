@@ -14,16 +14,24 @@ header div{width: 56px; position: fixed; top: calc(50% - 11px); left: 30px; z-in
 header div span{display: block; height: 4px; background-color: white; transition: 0.3s;}
 header div span:first-of-type{margin-bottom: 14px;}
 header div span:nth-of-type(2){width: 36px}
+header div.menuBtn span:first-of-type{transform: rotateZ(-45deg);}
+header div.menuBtn span:nth-of-type(2){transform: translateY(-18px) rotateZ(45deg); width: 100%;}
 header > span{position: fixed; font-size: 16px; letter-spacing: 1px; color: #7f7f7f; bottom: 150px; left: 45px; transform: rotateZ(90deg); transform-origin: left top; z-index: 1;}
 header > span::after{content: "→"; font-size: 20px; color: white; font-weight: bold;}
+header.lastSction > span::before{content: '←'; font-size: 20px; color: white; font-weight: bold;}
+header.lastSction > span::after{content: ''; }
+
 header > span.newsLink{transform: rotateZ(0deg); left: 30px; bottom: 30px; font-family: 'NanumSquare'; font-weight: 900; font-size: 22px; color: black;}
 header > span.newsLink a{text-decoration: none; color: black; font-weight: 900; font-size: 20px;}
+header > span.newsLink::after{display: none;}
 header.headerBlack{}
 header.headerBlack h1{background-image: url(../img/logo.png);}
 header.headerBlack ul li{background-color: rgba(0, 0, 0, 0.5);}
 header.headerBlack ul li.active{background-color: black;}
 header.headerBlack div span{background-color: black;}
 header.headerBlack  > span::after{color: black;}
+header.headerBlack.lastSction > span::before{content: '←'; color: black;  font-size: 20px; font-weight: bold;}
+header.headerBlack.lastSction > span::after{content: ''; color: black;}
 
 /*service 메뉴*/
 /* .serviceArea header{}
@@ -124,12 +132,14 @@ nav div ul > li ol li:last-of-type{font-size: 60px;}
 
 
 
-@media screen and (max-width:768px){
+@media screen and (max-width:767px){
 header ul{display: none;}
 header h1{right: 30px; left: auto; transition: 0.1s;}
 header div span{transition: 0.1s;}
 header > span{display: none;}
 header > span.newsLink{display: block;}
+
+
 
 nav div footer{display: none;}
 body > div > footer{display: block; padding: 50px 15px;}

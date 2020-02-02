@@ -5,6 +5,7 @@
         mainVisionClick();
         menuClick();
         scrollEvent();
+        brandLogo();
 
         $(".wrapArea header h1").click(function(){
             $("section").removeClass("scrollClass");
@@ -28,6 +29,7 @@
                 });
             }
         });
+        
 
      
     });
@@ -44,6 +46,7 @@
                 // $("header ul").append("<li></li>");
                 // $("header ul li").eq(0).addClass("active")
             // }
+            
             
                 $(this).on("DOMMouseScroll mousewheel", function (event) {
                     scrollClass = $(".scrollClass");
@@ -62,6 +65,11 @@
                                         $(this).prev().removeClass("navPageCheck");
                                         $("header ul li").removeClass("active");
                                         $("header ul li").eq($(".navPageCheck").length).addClass("active");
+                                    }
+                                    console.log($(this).index());
+                                        console.log($("section").length);
+                                    if($(this).index() >= $("section").length){
+                                        $("header").removeClass("lastSction");
                                     }
                                 }
                             }
@@ -83,6 +91,10 @@
                                             $(this).addClass("navPageCheck");
                                             $("header ul li").removeClass("active");
                                             $("header ul li").eq($(".navPageCheck").length).addClass("active");
+                                        }
+                                        
+                                        if($(this).index() == $("section").length){
+                                            $("header").addClass("lastSction");
                                         }
                                 }
                             }
@@ -137,9 +149,62 @@
 
                 });
 
-                $(this).on("touchmove", function (event) {
-                    console.log(event.originalEvent);
+                // 터치한 순간의 위치를 담는 변수
+                var touchLocation;
+                // 터치한 순간
+                $(this).on("touchstart", function (event) {
+                    // 터치한 순간의 위치
+                    touchLocation = event.originalEvent.touches[0].screenX;
                 });
+
+                // 테블릿 터치
+                $(this).on("touchmove", function (event) {
+                    scrollClass = $(".scrollClass");
+                    if(event.originalEvent.touches[0].screenX > touchLocation){
+                        // 테블릿 터치 위로
+                        if($(this).next()[0].localName == "section"){
+                            if($(this)[0].className == $('section').eq(0)[0].className || parseInt(scrollClass.eq(scrollClass.length -1).css("bottom")) == $(window).height()){
+                                    $(this).addClass("scrollClass");
+                                    pageScrollClass = 1;
+                                    if($(this).next().hasClass("navPage")){
+                                        $(this).addClass("navPageCheck");
+                                        $("header ul li").removeClass("active");
+                                        $("header ul li").eq($(".navPageCheck").length).addClass("active");
+                                    }
+                                    
+                                    if($(this).index() == $("section").length){
+                                        $("header").addClass("lastSction");
+                                    }
+                            }
+                        }
+
+                        if($(this).hasClass("mainArea")) {
+                            $("header").addClass("headerBlack");
+                        }
+                    }else if(event.originalEvent.touches[0].screenX < touchLocation){
+                        // 테블릿 터치 아래로
+                        if(($(this).prev()[0].localName) == "section"){
+                            if(parseInt($("section").eq(scrollClass.length -1 ).css("bottom")) == $(window).height() && parseInt($("section").eq(scrollClass.length).css("bottom")) == 0){
+                                $(this).prev().removeClass("scrollClass");
+                                if($(this).prev().hasClass("navPageCheck")){
+                                    $(this).prev().removeClass("navPageCheck");
+                                    $("header ul li").removeClass("active");
+                                    $("header ul li").eq($(".navPageCheck").length).addClass("active");
+                                }
+                                if($(this).index() >= $("section").length){
+                                    $("header").removeClass("lastSction");
+                                }
+                            }
+                        }
+
+
+                        if($(this).hasClass("aboutArea")) {
+                            $("header").removeClass("headerBlack");
+                        }
+                    }
+                }); // 테블릿 터치 fin
+
+
 
             });  // section fin
     }
@@ -164,15 +229,22 @@
 
     function mainVisionClick(){
         $(".visionArea ul li").on('click',function(){
-            $(".visionArea ul li").addClass("unActive");
-            $(".visionArea ul li").removeClass("Active");
-            $(this).removeClass("unActive");
-            $(this).addClass("Active");
-            if($(window).width() <= 768){
-                $(".visionArea ul li").children("span").text("+");
-                $(this).children("span").text("-");
+            if($(this).hasClass("Active")){
+                $(".visionArea ul li").removeClass("Active");
+                $(".visionArea ul li").removeClass("unActive");
+            }else{
+                $(".visionArea ul li").addClass("unActive");
+                $(".visionArea ul li").removeClass("Active");
+                $(this).removeClass("unActive");
+                $(this).addClass("Active");
+                if($(window).width() <= 768){
+                    $(".visionArea ul li").children("span").text("+");
+                    $(this).children("span").text("-");
+                }
             }
         });
+
+      
     };
 
     function menuClick(){
@@ -187,5 +259,35 @@
                 $("header").addClass("headerBlack");
                 menuColorBoolean = true;
             }
+            $("header div").toggleClass("menuBtn");
         });
+    }
+
+    function brandLogo(){
+        var breandLogoUl = $(".brandLogoArea").html();
+        var breandLogoWidth = $(".brandLogoArea ul").width();
+        // console.log($(".brandLogoArea").html());
+        for(var a = 0; a <=2; a++){
+            // $(".brandLogoArea").appendTo($(".brandLogoArea").html($(".brandLogoArea").html()));
+        }
+        $(".brandLogoArea").append(breandLogoUl);
+        $(".brandLogoArea").append(breandLogoUl);
+
+        console.log($(".brandLogoArea ul").length);
+        $(".brandLogoArea ul").each(function(){
+            $(this).css("left",breandLogoWidth * $(this).index());
+            // console.log("left",$(this).position().left);
+            console.log($(this).index() * $(this).width());
+        });
+
+      
+        setInterval(function(){
+            $(".brandLogoArea ul").each(function(){
+                $(this).css("left",$(this).position().left - 1);
+                if($(this).position().left <= -breandLogoWidth){
+                    $(this).css("left",breandLogoWidth * ($(".brandLogoArea ul").length - 1));
+                }
+            });
+        },5);
+        
     }

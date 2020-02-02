@@ -1,13 +1,13 @@
 /* contact 부분 */
 /* contact 공통 부분 */
-.contactArea{width: 100%; max-width: 1350px; margin: 0 auto; display: flex; flex-direction: column; justify-content: center;}
+.contactArea{width: 100%; max-width: 1350px; margin: 0 auto; padding-top: 100px; display: flex; flex-direction: column; justify-content: center;}
 /* contact 제목 부분 */
 .contactArea .contactTitleArea{position: relative;}
 .contactArea .contactTitleArea h2{font-size: 80px; margin-bottom: 5vh;}
 .contactArea .contactTitleArea span{position: absolute; right: 0; top: 0; font-size: 18px; font-weight: 900;}
 .contactArea .contactTitleArea span a{color: black;}
 /* contact 컨텐츠 부분 */
-.contactArea ul{display: flex; justify-content: space-between;}
+.contactArea ul{display: flex; justify-content: space-between; margin-bottom: 50px;}
 .contactArea ul li{width: 40%; max-width: 530px;}
 .contactArea ul li h3{font-size: 40px; margin-bottom: 3vh;}
 .contactArea ul li .contactMapArea{position: relative; width: 100%; height: 0; padding-bottom: 70%; margin-bottom: 3.5vh;}
@@ -22,7 +22,7 @@
 
 
 @media screen and (min-width:767px){
-.contactArea{height: 100vh;}
+/* .contactArea{height: 100vh;} */
 }
 
 
@@ -43,7 +43,7 @@
 }
 
 @media screen and (min-width:767px) and (max-width:1366px){
-.contactArea{padding: 0 30px;}
+.contactArea{padding: 100px 30px 0;}
 .contactArea ul li{width: 48%;}
 }
 

@@ -2,8 +2,8 @@
 /* news 부분*/
 /* news 공통 부분*/
 .newsArea .newsContentsArea a{color: black; text-decoration: none;}
-.newsArea{width: 100%; height: 100vh; max-width: 1350px; margin: 0 auto;  display: flex; flex-direction: column; justify-content: center;}
-.newsContentsArea{position: relative;}
+.newsArea{width: 100%; max-width: 1350px; margin: 0 auto;  display: flex; flex-direction: column; justify-content: center;}
+.newsContentsArea{position: relative; padding-top: 100px;}
 /* news 제목 부분*/
 .newsContentsArea h2{font-size: 80px; margin-bottom: 5vh;}
 /* news 컨텐츠 부분*/
@@ -31,8 +31,8 @@
 /* news list 공통 부분*/
 .newsListArea{width: 100%; display: flex; flex-direction: column;}
 /* news list 제목 부분*/
-.newsListArea .newsListTitleArea{height: 31vh; width: 100%; max-width: 1350px; margin: 0 auto; display: flex; flex-direction: column; justify-content: flex-end; position: relative; margin-bottom: 4vh;}
-.newsListArea .newsListTitleArea h2{font-size: 80px; margin-bottom: 7vh;}
+.newsListArea .newsListTitleArea{height: 27vh; width: 100%; max-width: 1350px; margin: 0 auto; display: flex; flex-direction: column; justify-content: flex-end; position: relative; margin-bottom: 4vh;}
+.newsListArea .newsListTitleArea h2{font-size: 80px; margin-bottom: 4vh;}
 .newsListArea .newsListTitleArea h3{font-size: 40px; }
 .newsListArea .newsListTitleArea h3 span{display: block; font-size: 20px; margin-bottom: 3vh;}
 .newsListArea .newsListTitleArea > span{ position: absolute; right: 0; bottom: 0; font-size: 17px; font-weight: 600;}
@@ -43,12 +43,12 @@
 
 
 @media screen and (max-height: 875px) and (min-width: 1600px){
-.newsContentsArea h2{position: fixed; right: 30px; top: 30px; font-size: 40px;}
+/* .newsContentsArea h2{position: fixed; right: 30px; top: 30px; font-size: 40px;} */
 .newsContentsArea > ul li figure img{width: 300px;}
 }
 
 @media screen and (max-height: 875px) and (max-width: 1600px) and (min-width: 767px){
-.newsContentsArea h2{position: fixed; right: 30px; top: 30px; font-size: 40px;}
+/* .newsContentsArea h2{position: fixed; right: 30px; top: 30px; font-size: 40px;} */
 .newsListArea .newsListTitleArea h2{position: fixed; right: 30px; top: 30px; font-size: 40px;}
 }
 
@@ -57,7 +57,7 @@
 }
 
 @media screen and (max-width: 1800px){
-.newsContentsArea{padding: 0 50px 0 100px;}
+.newsContentsArea{padding: 100px 50px 0 100px;}
 
 .newsListArea .newsListTitleArea{padding: 0 10px; box-sizing: border-box;}
 .newsListArea .newsListTitleArea h2{margin-bottom: 3vh}
@@ -65,7 +65,7 @@
 }
 
 @media screen and (max-width: 1366px){
-.newsContentsArea{padding: 0 10px;}
+.newsContentsArea{padding: 100px 10px 0;}
 }
 
 @media screen and (min-width: 767px){

@@ -49,10 +49,15 @@ div.pageArea:not(:first-of-type).test{top: 0vh;}
 
 }
 
+/* .brandSho01pArea{display: none;} */
+.brandLogoArea{position: absolute; width: 100%; bottom: 0; left: 0; overflow: hidden; display: flex; height: 50px;}
+.brandLogoArea ul{display: flex; animation-name: brandLogoArea11; animation-duration: 10s;  position: absolute;}
+.brandLogoArea ul li{text-align: center; position: relative;}
+/* @keyframes brandLogoArea11{
+    from{transform: translateX(0);}
+    to{transform: translateX(-100%);}
+} */
 
-.brandLogoArea{position: absolute; width: 100%; bottom: 0; left: 0; overflow: hidden;}
-.brandLogoArea ul{display: flex;}
-.brandLogoArea ul li{text-align: center;}
 
 /* .BrandWrapArea .brandShopArea{display: none;} */
 .BrandWrapArea .brandEditionArea div.pageArea{overflow: hidden;}
@@ -60,15 +65,16 @@ div.pageArea:not(:first-of-type).test{top: 0vh;}
 /* brand edition */
 .BrandWrapArea .brandEdition02Area{display: flex; flex-direction: column; justify-content: center;  background-color: black;}
 .BrandWrapArea .brandEdition02Area > *:not(.editionBrandLogoArea){width: 100%; max-width: 1350px; margin: 0 auto;}
-.BrandWrapArea .brandEdition02Area h2{font-size: 78px; text-align: right; line-height: 1.1; margin-bottom: 105px; margin-bottom: 5.5%;}
+.BrandWrapArea .brandEdition02Area h2{font-size: 78px; text-align: right; line-height: 1.1; margin-bottom: 105px; padding-bottom: 5.5%;}
 .BrandWrapArea .brandEdition02Area div:first-of-type::after{content: ''; display: block; visibility: hidden; clear: both;}
-.BrandWrapArea .brandEdition02Area div:first-of-type ul{width: 48%; }
-.BrandWrapArea .brandEdition02Area div:first-of-type ul:first-of-type{float: left; margin-right: 2%}
-.BrandWrapArea .brandEdition02Area div:first-of-type ul:last-of-type{float: right; margin-left: 2%;}
-.BrandWrapArea .brandEdition02Area div:first-of-type ul li{border-top: 1px solid #404040; padding:20px 0 60px 0; box-sizing: border-box;}
+.BrandWrapArea .brandEdition02Area div:first-of-type ul{width: 30%; float: left; }
+.BrandWrapArea .brandEdition02Area div:first-of-type ul:not(:last-of-type){margin-right: 5%;}
+/* .BrandWrapArea .brandEdition02Area div:first-of-type ul:first-of-type{float: left; margin-right: 2%}
+.BrandWrapArea .brandEdition02Area div:first-of-type ul:last-of-type{float: right; margin-left: 2%;} */
+.BrandWrapArea .brandEdition02Area div:first-of-type ul li{border-top: 1px solid #404040; padding:20px 0 60px 0; box-sizing: border-box; height: 175px;}
 .BrandWrapArea .brandEdition02Area div:first-of-type ul li span{font-size: 22px; font-weight: 500; margin-bottom: 15px; display: inline-block;}
 .BrandWrapArea .brandEdition02Area div:first-of-type ul li dl dt{font-size: 30px; font-weight: 500; margin-bottom: 20px; letter-spacing: 1.5px;}
-.BrandWrapArea .brandEdition02Area div:first-of-type ul li dl dd{font-size: 18px;}
+.BrandWrapArea .brandEdition02Area div:first-of-type ul li dl dd{font-size: 18px; line-height: 1.5;}
 
 .BrandWrapArea .brandExpress02Area{display: flex; flex-direction: column; justify-content: center;  background-color: black;}
 .BrandWrapArea .brandExpress02Area > *:not(.editionBrandLogoArea){width: 100%; max-width: 1350px; margin: 0 auto;}
@@ -94,7 +100,7 @@ div.pageArea:not(:first-of-type).test{top: 0vh;}
 
 .BrandWrapArea .brandSho02pArea > div:first-of-type h2{font-size: 90px; margin-top: 30px;}
 
-.BrandWrapArea .brandEdition02Area h2{margin-bottom: 5%;}
+.BrandWrapArea .brandEdition02Area h2{padding-bottom: 5%;}
 .BrandWrapArea .brandEdition02Area div:first-of-type ul li{padding-bottom: 30px; }
 
 .BrandWrapArea .brandExpress02Area h2{margin-bottom: 5%;}
@@ -113,6 +119,11 @@ div.pageArea:not(:first-of-type).test{top: 0vh;}
 
 .BrandWrapArea .brandEdition02Area h2{margin-bottom: 3%; font-size: 70px;}
 .BrandWrapArea .brandEdition02Area > *:not(.editionBrandLogoArea){width: 100%; padding: 0px 50px 0 100px; box-sizing: border-box;}
+
+
+.BrandWrapArea .brandEdition02Area div:first-of-type ul{margin-top: 30px;}
+
+
 .BrandWrapArea .brandSho02pArea div:first-of-type div{padding-top: 155px;}
 .BrandWrapArea .brandEdition02Area div.brandLogoArea{padding: 0;}
 
@@ -153,9 +164,11 @@ div.pageArea:not(:first-of-type).test{top: 0vh;}
 
     
 .BrandWrapArea .brandEdition02Area h2{font-size: 53px;}
+.BrandWrapArea .brandEdition02Area div:first-of-type ul li{height: 225px;}
 .BrandWrapArea .brandEdition02Area div:first-of-type ul li span{font-size: 20px;}
 .BrandWrapArea .brandEdition02Area div:first-of-type ul li dl dt{font-size: 25px;}
 .BrandWrapArea .brandEdition02Area div:first-of-type ul li dl dd{font-size: 17px;}
+.BrandWrapArea .brandEdition02Area div:first-of-type ul li dl dd br{display: none;}
 
 .BrandWrapArea .brandExpress02Area h2{font-size: 53px;}
 .BrandWrapArea .brandExpress02Area div:first-of-type ul li span{font-size: 20px;}
@@ -182,9 +195,8 @@ div.pageArea:not(:first-of-type).test{top: 0vh;}
 
 
 @media screen and (min-width: 767px){
-.BrandWrapArea .brandEdition02Area div:first-of-type ul li{border-top: 1px solid #404040; padding:20px 0 60px 0; box-sizing: border-box; height: 18vh;}
+.BrandWrapArea .brandEdition02Area div:first-of-type ul li{border-top: 1px solid #404040; padding:20px 0 60px 0; box-sizing: border-box;}
 
-.BrandWrapArea .brandExpress02Area div:first-of-type ul li{border-top: 1px solid #404040; padding:20px 0 60px 0; box-sizing: border-box; height: 18vh;}
 
 }
 /* 모바일 */
@@ -217,6 +229,7 @@ div.pageArea:not(:first-of-type).test{top: 0vh;}
 .BrandWrapArea .brandEdition02Area div:first-of-type ul:first-of-type{margin: 0;}
 .BrandWrapArea .brandEdition02Area div:first-of-type ul:last-of-type{margin: 0;}
 .BrandWrapArea .brandEdition02Area div:first-of-type ul li dl dt{margin-bottom: 30px;}
+.BrandWrapArea .brandEdition02Area div:first-of-type ul li dl dd br{display: none;}
 
 .BrandWrapArea .brandEdition02Area div:first-of-type ul{width: 100%;}
 .BrandWrapArea .brandEdition02Area div:first-of-type ul li{height: 200px;}
