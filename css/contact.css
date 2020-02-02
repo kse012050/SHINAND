@@ -2,9 +2,9 @@
 /* contact 공통 부분 */
 .contactArea{width: 100%; max-width: 1350px; margin: 0 auto; padding-top: 100px; display: flex; flex-direction: column; justify-content: center;}
 /* contact 제목 부분 */
-.contactArea .contactTitleArea{position: relative;}
+.contactArea .contactTitleArea{display: flex; align-items: flex-end;}
 .contactArea .contactTitleArea h2{font-size: 80px; margin-bottom: 5vh;}
-.contactArea .contactTitleArea span{position: absolute; right: 0; top: 0; font-size: 18px; font-weight: 900;}
+.contactArea .contactTitleArea span{ font-size: 18px; font-weight: 900; margin-bottom: 5vh;}
 .contactArea .contactTitleArea span a{color: black;}
 /* contact 컨텐츠 부분 */
 .contactArea ul{display: flex; justify-content: space-between; margin-bottom: 50px;}
@@ -52,9 +52,12 @@
 /* 모바일 */
 @media screen and (max-width:767px){
 .contactArea{padding: 75px 10px 0; box-sizing: border-box;}
-.contactArea .contactTitleArea{margin-bottom: 30px;}
-.contactArea .contactTitleArea span{top: auto; right: auto; bottom: 0; left: 0;}
+.contactArea .contactTitleArea{margin-bottom: 30px; flex-direction: column; align-items: flex-start;} 
+.contactArea .contactTitleArea h2{margin-bottom: 20px;}
+.contactArea .contactTitleArea span{margin-bottom: 0;}
 
 .contactArea ul{flex-direction: column; width: 100%; max-width: 100%;}
 .contactArea ul li{width: 100%; max-width: 100%; margin-bottom: 50px;}
+
+body > div > footer{border-top: 1px solid;}
 }

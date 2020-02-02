@@ -65,12 +65,12 @@ background-repeat:no-repeat;background-position: right center; background-size:4
 /* service technology 기술3 부분*/
 .ST03{height: 100%; display: flex; flex-direction: column; justify-content: center;}
 /* service technology 기술3 제목 부분*/
-.ST03 div{display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 15vh;}
-.ST03 div h2{font-size: 146px;}
-.ST03 div p{font-size: 44px; font-weight: 900; letter-spacing: -5px;}
+.ST03 div:first-of-type{display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 15vh;}
+.ST03 div:first-of-type h2{font-size: 146px;}
+.ST03 div:first-of-type p{font-size: 44px; font-weight: 900; letter-spacing: -5px;}
 /* service technology 기술3 컨텐츠 부분*/
 .ST03 ul{height: 45vh; min-height: 400px; display: flex; justify-content: space-between;}
-.ST03 ul li{width: 25%; max-width: 295px; min-height: 450px; display: flex; flex-direction: column; justify-content: flex-end; text-align: center;}
+.ST03 ul li{width: 25%; max-width: 295px; height: 450px; display: flex; flex-direction: column; justify-content: flex-end; text-align: center;}
 .ST03 ul li{background-repeat: no-repeat ; background-position: center top; background-size: 200px;}
 .ST03 ul li:nth-of-type(1){background-image: url(../img/service/ST03Img01.png)}
 .ST03 ul li:nth-of-type(2){background-image: url(../img/service/ST03Img02.png)}
@@ -88,8 +88,8 @@ background-repeat:no-repeat;background-position: right center; background-size:4
 .SC02{width: 100%; height: 100%; max-width: 1350px; margin: 0 auto;}
 /* service contents 컨텐츠1 부분*/
 .SC01{display: flex; flex-direction: column; justify-content: center; align-items: flex-end; }
-.SC01 > *:not(img){width: 570px;}
-.SC01 img{position: absolute; left: 0; top: 0; z-index: -1;}
+.SC01 > *:not(div){width: 570px;}
+.SC01 div{position: absolute; left: 0; top: 0; z-index: -1;}
 .pageArea:first-of-type .SC01{background: url(../img/service/SC01Img01.jpg) no-repeat left top;}
 /* service contents 컨텐츠1 제목 부분*/
 .SC01 h2{font-size: 120px; margin-bottom: 10vh;}
@@ -117,7 +117,8 @@ background-repeat:no-repeat;background-position: right center; background-size:4
 .SC02 ul li figure{}
 .SC02 ul li figure img{width: 100%; margin-bottom: 2vh;}
 .SC02 ul li figure figcaption{height: 19vh; max-height: 200px;}
-.SC02:last-of-type ul li figure figcaption{max-height: 130px;}
+.serviceContents04Area .SC02 ul li figure figcaption{max-height: 100px;}
+
 .SC02 ul li figure figcaption dl{height: 100%; display: flex; flex-direction: column; justify-content: space-between;}
 .SC02 ul li figure figcaption dl dt{font-size: 40px; font-weight: 900; letter-spacing: -4px;}
 .SC02 ul li figure figcaption dl dd{font-size: 18px; letter-spacing: -2px; font-weight: 600; line-height: 1.5;}
@@ -130,6 +131,7 @@ background-repeat:no-repeat;background-position: right center; background-size:4
 
 /* 나중에 제거*/
 /* .serviceDistributionArea , .serviceLogistigyArea{display: none;} */
+
 
 
 /* 반응형 */
@@ -157,7 +159,7 @@ background-repeat:no-repeat;background-position: right center; background-size:4
 
 
 /*테블릿 시작*/
-@media screen and (min-width:767px) and (max-width : 1800px){
+@media screen and (min-width:767px) and (max-width : 1800px) and (max-height : 850px){
 .ST01, .ST02, .ST03 , .SC01 , .SC02{padding: 75px 50px 0 100px; box-sizing: border-box;}
 
 /* service technology 기술1 제목 부분*/
@@ -180,10 +182,14 @@ background-repeat:no-repeat;background-position: right center; background-size:4
 
 
 /* service contents 컨텐츠3 컨텐츠 부분*/
-/* .SC02 ul li figure img{width: 50%;} */
+.SC02 ul li figure img{width: 70%;}
 }
 
 
+@media screen and (min-width:767px) and (max-width:1400px){
+/* .SC01 div{position: relative;} */
+.SC01 div::after{content: ''; display: block; position: absolute; left: 0;top: 0; width: 100%; height: 100%; background-color:rgba(221,221,221,0.5);}
+}
 /*가로 767 ~ 1366 */
 @media screen and (min-width:767px) and (max-width:1366px){
 .ST01, .ST02, .ST03 , .SC01 , .SC02{padding: 75px 30px 0;}
@@ -193,8 +199,17 @@ background-repeat:no-repeat;background-position: right center; background-size:4
 .SC01 ul{z-index: 1;} */
 
 .SC02 h2{font-size: 80px;}
+.SC02 ul li figure figcaption{height: 140px;}
 .SC02 ul li figure figcaption dl dt{font-size: 25px;}
 .SC02 ul li figure figcaption dl dd br{display: none;}
+}
+
+@media screen and (min-width:1366px) and (max-height: 800px){
+.SC02 h2{margin-bottom: 5vh;}
+.SC02 ul li span{display: none;}
+
+.ST03 div:first-of-type{margin-bottom: 5vh;}
+.ST03 ul li{min-height: 400px;}
 }
 
 
@@ -215,22 +230,26 @@ background-repeat:no-repeat;background-position: right center; background-size:4
 .ST02 > div:nth-of-type(2) ul{width: calc(100% - 350px);}
 
 /* service technology 기술3 컨텐츠 부분*/
+.ST03 div:first-of-type{flex-direction: column; align-items: center; margin-bottom: 9vh;}
+.ST03 div:first-of-type h2{margin-bottom: 5vh;}
 .ST03 ul{max-height: 400px;}
 .ST03 ul li{width: 33.33%;}
 }
 
-/* 모바일 */ .m_sliderBtn{display: none;}
+/* 모바일 */ 
+.m_sliderBtn{display: none;}
+/* .ST03 div.m_sliderBtn{display: none;} */
 @media screen and (max-width:767px){
 .SC02{position: relative;}
-.m_sliderBtn{display: block; position: absolute; top: 50%; font-weight: 900; font-size: 30px; width: 100%;}
+.m_sliderBtn{display: block; position: absolute; top: 50%; font-weight: 900; font-size: 30px; width: 100%; z-index: 1;}
 .m_sliderBtn span{position: absolute; display: flex; justify-content: center; align-items: center; width: 40px; height: 40px; background-color: #eeeeee;}
 .m_sliderBtn span img{width: 100%;}
 .m_sliderBtn span:first-of-type{left: 0;}
 .m_sliderBtn span:last-of-type{right: 0;}
 
 .serviceArea{padding-top: 100px;}
-.serviceDistributionArea,.serviceLogistigyArea{display: none;}
-.serviceTechnology01Area ,.serviceTechnology02Area, .serviceTechnology03Area{padding: 0 30px;}
+/* .serviceDistributionArea,.serviceLogistigyArea{display: none;} */
+.serviceDistributionArea ,.serviceLogistigyArea ,.serviceTechnology01Area ,.serviceTechnology02Area, .serviceTechnology03Area{padding: 0 30px;}
 
 /* service technology 기술1 부분*/
 .ST01{flex-direction: column; align-items: flex-start;}
@@ -261,30 +280,39 @@ background-repeat:no-repeat;background-position: right center; background-size:4
 /* .ST02 > div:nth-of-type(2) ul li:nth-of-type(3){justify-content: flex-end; background-position: right top;} */
 
 /* service technology 기술3 부분*/
-.ST03{margin-bottom: 150px;}
-.ST03 div{flex-direction: column; align-items: center; margin-bottom: 60px;}
+.ST03{margin-bottom: 150px; position: relative;}
+.ST03 div:first-of-type{flex-direction: column; align-items: center; margin-bottom: 60px;}
 /* service technology 기술3 제목 부분*/
-.ST03 div h2{font-size: 118px; margin-bottom: 0.339em;}
+.ST03 div:first-of-type h2{font-size: 118px; margin-bottom: 0.339em;}
 /* service technology 기술3 컨텐츠 부분*/
 .ST03 ul{position: relative;}
-.ST03 ul li{position: absolute; left: 0; top: 0; width: 100%; max-width: 100%; height: 100%; background-color: white; height: 400px; min-height: 400px;}
+.ST03 ul li{position: absolute; left: 0; top: 0; width: 100%; max-width: 100%; height: 100%; background-color: white; height: 400px; min-height: 400px; opacity:0; transition: 1s;}
+.ST03 ul li.M_Show{opacity: 1;}
 
 /* service contents 공통부분*/
 .SC01{align-items: flex-start;}
-.SC01 img{position: static; z-index: 0; width: 100%; margin-bottom: 70px;}
-.SC01 > *:not(img){padding: 0 30px; box-sizing: border-box;}
+.SC01 div{position: static; z-index: 0; width: 100%; margin-bottom: 70px;}
+.SC01 div img{width: 100%;}
+.SC01 > *:not(div){padding: 0 30px; box-sizing: border-box;}
 .SC01 h2{font-size: 104px; margin-bottom: 0.673em;}
 
 .SC01 ul{margin-bottom: 70px;}
 
 
 .SC02 ul{position: relative; height: 780px;}
-.SC02 ul li{position: absolute; left: 15%; top: 0; width: 70%; height: 100%; background-color: #dddddd;}
+.SC02 ul li{position: absolute; left: 15%; top: 0; width: 70%; height: 100%; background-color: #dddddd; opacity: 0; transition: 1s;}
+.SC02 ul li.M_Show{opacity: 1;}
+
+.ST03 .m_sliderBtn{top: 70%;}
+
+
+
+
 }
 
 
 @media screen and (max-width:700px){
-.serviceTechnology01Area, .serviceTechnology02Area, .serviceTechnology03Area{padding: 0 10px;}
+.serviceDistributionArea ,.serviceLogistigyArea ,.serviceTechnology01Area, .serviceTechnology02Area, .serviceTechnology03Area{padding: 0 10px;}
 /* service technology 기술1 제목 부분*/
 .ST01 div:first-of-type h2{font-size: 100px;}
 .ST01 div:first-of-type p{font-size: 35px; }
@@ -294,13 +322,13 @@ background-repeat:no-repeat;background-position: right center; background-size:4
 /* service technology 기술2 컨텐츠 부분*/
 
 /* service technology 기술3 제목 부분*/
-.ST03 div h2{font-size: 65px;}
-.ST03 div p{font-size: 35px;}
+.ST03 div:first-of-type h2{font-size: 65px;}
+.ST03 div:first-of-type p{font-size: 35px;}
 /* service technology 기술3 컨텐츠 부분*/
 
 /* service contents 공통부분*/
 .SC01 h2{font-size: 80px;}
-.SC01 > *:not(img){width: 100%;}
+.SC01 > *:not(div){width: 100%;}
 
 
 .SC02 h2{font-size: 80px;}
@@ -316,17 +344,17 @@ background-repeat:no-repeat;background-position: right center; background-size:4
 /* service technology 기술2 컨텐츠 부분*/
 
 /* service technology 기술3 제목 부분*/
-.ST03 div h2{font-size: 65px;}
-.ST03 div p{font-size: 27px;}
+.ST03 div:first-of-type h2{font-size: 65px;}
+.ST03 div:first-of-type p{font-size: 27px;}
 /* service technology 기술3 컨텐츠 부분*/
 
 /* service contents 공통부분*/
 .SC01 h2{font-size: 60px;}
-.SC01 > *:not(img){width: 100%; padding: 0 10px;}
+.SC01 > *:not(div){width: 100%; padding: 0 10px;}
 
 
 .SC02 h2{font-size: 65px;}
-.SC02 ul{height: 150vw;}
+.SC02 ul{height: 125vw;}
 .SC02 ul li{left: 10%; width: 80%;}
 .ST02 > div:first-of-type ol li dl{width: 100%;}
 }

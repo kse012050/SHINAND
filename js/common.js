@@ -6,6 +6,7 @@
         menuClick();
         scrollEvent();
         brandLogo();
+        serviceSlider();
 
         $(".wrapArea header h1").click(function(){
             $("section").removeClass("scrollClass");
@@ -14,11 +15,13 @@
 
         $(window).resize(function(){
             if($(window).width() < 768){
-                mainMobileMainAreaH = parseInt($(".mainArea").css("height").replace(/[^0-9]/g,""));
-                if($("header h1").hasClass("logoBlack") && $(window).scrollTop() < mainMobileMainAreaH ){
-                    $("header h1").removeClass("logoBlack");
+                if($("section").hasClass("mainArea")){
+                    console.log("확인");
+                    mainMobileMainAreaH = parseInt($(".mainArea").css("height").replace(/[^0-9]/g,""));
+                    if($("header").hasClass("headerBlack") && $(window).scrollTop() < mainMobileMainAreaH ){
+                        $("header").removeClass("headerBlack");
+                    }
                 }
-
                 // section 의 css bottom 값이 0이 아니면 0으로 만듭니다.
                 $('section').each(function(){
                     var mainSectionResize = parseInt($(this).css("bottom").replace(/[^0-9]/g,""));
@@ -154,13 +157,13 @@
                 // 터치한 순간
                 $(this).on("touchstart", function (event) {
                     // 터치한 순간의 위치
-                    touchLocation = event.originalEvent.touches[0].screenX;
+                    touchLocation = event.originalEvent.touches[0].screenY;
                 });
 
                 // 테블릿 터치
                 $(this).on("touchmove", function (event) {
                     scrollClass = $(".scrollClass");
-                    if(event.originalEvent.touches[0].screenX > touchLocation){
+                    if(event.originalEvent.touches[0].screenY < touchLocation){
                         // 테블릿 터치 위로
                         if($(this).next()[0].localName == "section"){
                             if($(this)[0].className == $('section').eq(0)[0].className || parseInt(scrollClass.eq(scrollClass.length -1).css("bottom")) == $(window).height()){
@@ -181,7 +184,7 @@
                         if($(this).hasClass("mainArea")) {
                             $("header").addClass("headerBlack");
                         }
-                    }else if(event.originalEvent.touches[0].screenX < touchLocation){
+                    }else if(event.originalEvent.touches[0].screenY > touchLocation){
                         // 테블릿 터치 아래로
                         if(($(this).prev()[0].localName) == "section"){
                             if(parseInt($("section").eq(scrollClass.length -1 ).css("bottom")) == $(window).height() && parseInt($("section").eq(scrollClass.length).css("bottom")) == 0){
@@ -290,4 +293,31 @@
             });
         },5);
         
+    }
+
+
+    function serviceSlider(){
+        var M_Show = [0,0,0,0];
+        var serviceShowList =[$(".serviceLogistigyArea .ST03 ul li"),$(".serviceTechnology03Area .ST03 ul li"),$(".serviceContents03Area .SC02 ul li"),$(".serviceContents04Area .SC02 ul li")];
+        $(".prevBtn").click(function(){
+            alert($(".prevBtn").index(this));
+            var prevBtnIndex = $(".prevBtn").index(this);
+            M_Show[prevBtnIndex] -= 1;
+            if(M_Show[prevBtnIndex] < 0){
+                M_Show[prevBtnIndex] = 2;
+            };
+            serviceShowList[prevBtnIndex].removeClass("M_Show");
+            serviceShowList[prevBtnIndex].eq(M_Show[prevBtnIndex]).addClass("M_Show");
+        });
+
+        $(".nextBtn").click(function(){
+            var nextBtnIndex = $(".nextBtn").index(this);
+            M_Show[nextBtnIndex] += 1;
+            if(M_Show[nextBtnIndex] >= 3){
+                M_Show[nextBtnIndex] = 0;
+            };
+            serviceShowList[nextBtnIndex].removeClass("M_Show");
+            serviceShowList[nextBtnIndex].eq(M_Show[nextBtnIndex]).addClass("M_Show");
+        });
+       
     }
